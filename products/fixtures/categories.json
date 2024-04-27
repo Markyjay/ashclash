@@ -1,0 +1,87 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": { "name": "azzurri", "friendly_name": "Azzurri" }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": { "name": "mycro", "friendly_name": "Mycro" }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": { "name": "atak", "friendly_name": "Atak" }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": { "name": "cooper", "friendly_name": "Cooper" }
+  },
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields": { "name": "curran_hurls", "friendly_name": "Curran Hurls" }
+  },
+  {
+    "pk": 6,
+    "model": "products.category",
+    "fields": { "name": "farrell_hurls", "friendly_name": "Farrell Hurls" }
+  },
+  {
+    "pk": 7,
+    "model": "products.category",
+    "fields": { "name": "moran_hurls", "friendly_name": "Moran Hurls" }
+  },
+  {
+    "pk": 8,
+    "model": "products.category",
+    "fields": { "name": "maher_handmade_hurls", "friendly_name": "Maher Handmade Hurls" }
+  },
+  {
+    "pk": 9,
+    "model": "products.category",
+    "fields": { "name": "all_hurleys", "friendly_name": "All Hurleys" }
+  },
+  {
+    "pk": 10,
+    "model": "products.category",
+    "fields": { "name": "training_sliotars", "friendly_name": "Training Sliotars" }
+  },
+  {
+    "pk": 11,
+    "model": "products.category",
+    "fields": { "name": "championship_sliotars", "friendly_name": "Championship Sliotars" }
+  },
+  {
+    "pk": 12,
+    "model": "products.category",
+    "fields": { "name": "karakal_sliotars", "friendly_name": "Karakal Sliotars" }
+  },
+  {
+    "pk": 13,
+    "model": "products.category",
+    "fields": { "name": "omeara_sliotars", "friendly_name": "O'Meara Sliotars" }
+  },
+  {
+    "pk": 14,
+    "model": "products.category",
+    "fields": { "name": "kids_starter_pack", "friendly_name": "Kids Starter Pack" }
+  },
+  {
+    "pk": 15,
+    "model": "products.category",
+    "fields": { "name": "deals", "friendly_name": "Deals" }
+  },
+  {
+    "pk": 16,
+    "model": "products.category",
+    "fields": { "name": "clearance", "friendly_name": "Clearance" }
+  },
+  {
+    "pk": 17,
+    "model": "products.category",
+    "fields": { "name": "all_specials", "friendly_name": "All Specials" }
+  }
+]
