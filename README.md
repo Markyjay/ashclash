@@ -56,20 +56,17 @@ Link to live site - []()
 ___
 
 ## Site Objectives
-
 At AshClash, our primary objective is to foster a thriving community around the sport of hurling while providing easy access to high-quality equipment for players of all ages. Our website serves as a hub for hurling enthusiasts, offering a platform where they can not only purchase essential gear but also connect with fellow players, coaches, and fans. Our three main goals are:
 
 Three main objectives of the AshClash webite are:
 
 - ### Accessibility:
-
   We aim to make hurling more accessible to individuals of all backgrounds by providing a convenient online platform where players can easily purchase equipment from anywhere in the world.
 
 - ### Quality:
   We are committed to offering only the highest quality helmets, hurls, and sliotars to ensure the safety and enjoyment of our customers as they engage in the exhilarating sport of hurling.
 
 - ### Community Building:
-
    Beyond being a marketplace, we strive to build a vibrant community around hurling, fostering connections and sharing resources to support players at every stage of their journey, from beginners to seasoned athletes.
 ___
 
@@ -79,39 +76,68 @@ ___
     At AshClash, we cater to a diverse range of demographics united by their passion for hurling. Our focus groups include:
 
 - Hurling Enthusiasts:
-
      This group comprises individuals of all ages who are deeply passionate about the sport of hurling. They may be active players, coaches, or dedicated fans who follow hurling closely and seek high-quality equipment to enhance their performance and enjoyment of the game.
 
 - Parents and Guardians:
-
      Another key demographic is parents and guardians who are interested in introducing their children to hurling from an early age. They seek safe and reliable equipment for their young players as they embark on their hurling journey, and they rely on AshClash to provide them with suitable gear and guidance.
 
 - Coaches and Clubs:
-
      Finally, we serve coaches and hurling clubs who are responsible for nurturing and developing players at various levels. They turn to AshClash for bulk purchases of equipment to outfit their teams, ensuring that players have access to the necessary gear to excel in training and competition. Our website also serves as a valuable resource for coaches, offering tips, tutorials, and community support to enhance their coaching endeavors.
 
-## User Stories
+## User Goals
 
 ### New Visitor Goals
-
 As a new visitor to AshClash, my goal is to explore the website and learn about the range of hurling equipment available. I want to understand the benefits of different gear options and find guidance on selecting the right equipment for my needs. Ultimately, I aim to make an informed purchase that will enhance my experience as I engage with the sport of hurling.
 
 ### Existing Visitor Goals
-
 As an existing visitor to AshClash, my goal is to easily navigate the website to find specific products or information I need. Whether I'm looking to replenish my supply of sliotars or seeking advice on improving my hurling technique, I expect a seamless browsing experience that caters to my ongoing involvement in the sport.
 
 ### Hurling Enthusiasts' Goals:
-
 As a passionate hurling enthusiast, my goal is to access top-quality equipment that enhances my performance and safety on the field. I seek a wide selection of helmets, hurls, and sliotars, along with expert guidance on choosing the right gear for my playing style and skill level. Additionally, I value a supportive community where I can connect with fellow enthusiasts to share experiences and celebrate our love for the sport.
 
 ### Parents & Guardians' Goals:
-
 As a parent or guardian interested in introducing my child to hurling, my goal is to find suitable equipment that prioritizes safety and ease of use. I rely on AshClash to provide me with high-quality helmets, hurls, and sliotars specifically designed for young players. I also appreciate resources and recommendations for nurturing my child's interest in hurling and ensuring a positive and enjoyable experience for them.
 
 ### Coaches and Clubs' Goals:
-
 As a coach or representative of a hurling club, my goal is to efficiently source bulk quantities of equipment to outfit my team for training and competition. I require a reliable supplier like AshClash that offers high-quality gear at competitive prices, with options for customization to suit the needs of my players. Additionally, I seek access to educational resources and community support to enhance my coaching effectiveness and foster a strong team dynamic.
-___
+
+## User stories
+## As Admin
+### Managing Player Profiles:
+  * As an admin, I want to be able to view a list of all player profiles registered on the AshClash platform.
+  * As an admin, I want to be able to add new player profiles, including details such as name, age, position, skill level, and contact information.
+  * As an admin, I want to be able to edit existing player profiles to update information as needed.
+  * As an admin, I want to be able to delete player profiles that are no longer active or relevant.
+### Managing Equipment Listings:
+  * As an admin, I want to be able to view a list of all equipment listings available for purchase on the AshClash website.
+  * As an admin, I want to be able to add new equipment listings, including details such as name, description, category, price, and availability.
+  * As an admin, I want to be able to edit existing equipment listings to update information or adjust availability status.
+  * As an admin, I want to be able to delete equipment listings that are no longer in stock or offered for sale.
+### Creating Equipment Recommendations:
+  * As an admin, I want to be able to create blog posts and recommendations for popular equipment sold on AshClash.
+  * As an admin, I want to be able to add new equipment recommendations, including details such as title, content, author, and associated equipment.
+  * As an admin, I want to be able to edit existing equipment recommendations to update content or revise recommendations.
+  * As an admin, I want to be able to delete equipment recommendations that are outdated or no longer relevant.
+
+## As a site user
+### User Account Management:
+  * As a site user, I can create or edit my account to update my details as needed.
+### Order Management:
+  * As a site user, I can log in to view my order history.
+### Product Discovery:
+  * As a site user, I can search for products and browse through them to find specific items I'm interested in purchasing.
+  * As a site user, I can sort products by criteria such as price and category to easily find what I'm looking for.
+### Product Interaction:
+  * As a site user, I can view product details to make informed purchase decisions.
+  * As a site user, I can easily add products to my shopping basket and view its contents.
+  * As a site user, I can update my basket by adding or removing products as needed.
+### Checkout Process:
+  * As a site user, I can view my order summary and securely checkout to confirm my purchase.
+### Engagement:
+  * As a site user, I can comment on blog posts to share my opinions.
+  * As a site user, I can use the contact form to communicate with the site owners.
+### Recommendations:
+  * As a site user, I want to easily view recommendations provided by the admin.
 
 # Design Choices
 
