@@ -15,19 +15,19 @@ import os
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8e(*x#ipkwrfj9tbt)lkzr$*#9qn@_whu!85vauz^-p**um@1r'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['ashclash-pp5-8ef04402753f.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['ashclash-pp5-8ef04402753f.herokuapp.com', 'localhost', '8000-markyjay-ashclash-jxaef9z52dc.ws-eu111.gitpod.io']
 
 
 # Application definition
