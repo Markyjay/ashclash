@@ -250,6 +250,7 @@ Here are the technologies used to build this project:
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 - [Django](https://www.djangoproject.com/)
 - [Bootstrap](https://getbootstrap.com/)
+- [Stripe](https://docs.stripe.com/)
 
 # Agile
 

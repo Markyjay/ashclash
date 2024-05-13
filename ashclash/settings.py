@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import dj_database_url
 
+import cloudinary_storage
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,13 +24,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', '6uk5m+on_ion9yk#m+04ej(^762w2(!5=a@plvw-pvgd3hoq)8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
+
+# 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['ashclash-pp5-8ef04402753f.herokuapp.com', 'localhost', '8000-markyjay-ashclash-jxaef9z52dc.ws-eu111.gitpod.io']
-
 
 # Application definition
 
@@ -48,7 +51,10 @@ INSTALLED_APPS = [
     'basket',
     'checkout',
     'profiles',
+    'cloudinary',
+    'cloudinary_storage',
     'crispy_forms',
+    'promotions',
 ]
 
 MIDDLEWARE = [
@@ -114,7 +120,6 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'ashclash.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -148,7 +153,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -169,6 +173,14 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME' : "dywqmlkp8",
+    'API_KEY' : "411248259864384",
+    'API_SECRET' : "4X8M7LAX7J6-gYbtuVrrpJP5A_o"
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
