@@ -18,7 +18,7 @@ if os.path.isfile('env.py'):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -179,18 +179,12 @@ STORAGES = {
         "BACKEND": 'cloudinary_storage.storage.StaticHashedCloudinaryStorage',
     },
 }
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME' : "dywqmlkp8",
-    'API_KEY' : "411248259864384",
-    'API_SECRET' : "4X8M7LAX7J6-gYbtuVrrpJP5A_o"
-}
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
