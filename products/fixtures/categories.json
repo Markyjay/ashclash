@@ -77,7 +77,7 @@
   {
     "pk": 16,
     "model": "products.category",
-    "fields": { "name": "clearance", "friendly_name": "Clearance" }
+    "fields": { "name": "recommendations", "friendly_name": "Recommendations" }
   },
   {
     "pk": 17,
