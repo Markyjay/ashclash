@@ -3,10 +3,12 @@ from django.contrib import messages
 
 from products.models import Product
 
+
 def view_basket(request):
     """ A view that renders the basket contents page """
 
     return render(request, 'basket/basket.html')
+
 
 def add_to_basket(request, item_id):
     """ Add a quantity of the specified product to the basket """
@@ -42,6 +44,7 @@ def add_to_basket(request, item_id):
         request.session['basket'] = basket
         return redirect(redirect_url)
     
+
 def adjust_basket(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
 
@@ -72,6 +75,7 @@ def adjust_basket(request, item_id):
     request.session['basket'] = basket
     return redirect(redirect_url)
 
+
 def remove_from_basket(request, item_id):
     """Remove the item from basket"""
 
@@ -81,7 +85,7 @@ def remove_from_basket(request, item_id):
         if 'product_size' in request.POST:
             size = request.POST['product_size']
         basket = request.session.get('basket', {})
-        
+
         if size:
             del basket[item_id]['items_by_size'][size]
             if not basket[item_id]['items_by_size']:

@@ -25,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '6uk5m+on_ion9yk#m+04ej(^762w2(!5=a@plvw-pvgd3hoq)8')
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY', '6uk5m+on_ion9yk#m+04ej(^762w2(!5=a@plvw-pvgd3hoq)8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG_MODE')
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites', # need to check necessity
+    'django.contrib.sites',  # need to check necessity
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -84,7 +85,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
