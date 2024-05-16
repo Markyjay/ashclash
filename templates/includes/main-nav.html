@@ -64,5 +64,25 @@
                 <a href="{% url 'products' %}?category=recommendations" class="dropdown-item">All Recommendations</a>
             </div>
         </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="promotions-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Promotions
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="{% url 'promotions' %}?category=helmets" class="dropdown-item">Helmets</a>
+                <a href="{% url 'promotions' %}?category=hurls" class="dropdown-item">Hurls</a>
+                <a href="{% url 'promotions' %}?category=sliotars" class="dropdown-item">Sliotars</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="reviews-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Reviews
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="{% url 'reviews' %}?category=helmets" class="dropdown-item">Popular Helmets</a>
+                <a href="{% url 'reviews' %}?category=hurls" class="dropdown-item">Popular Hurls</a>
+                <a href="{% url 'reviews' %}?category=sliotars" class="dropdown-item">Popular Sliotars</a>
+            </div>
+        </li>
     </ul>
 </div>
