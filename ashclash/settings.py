@@ -33,7 +33,7 @@ DEBUG = os.environ.get('DEBUG_MODE')
 
 # 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['ashclash-pp5-8ef04402753f.herokuapp.com', 'localhost', '8000-markyjay-ashclash-jxaef9z52dc.ws-eu111.gitpod.io']
+ALLOWED_HOSTS = ['ashclash-pp5-8ef04402753f.herokuapp.com', 'localhost', '8000-markyjay-ashclash-jxaef9z52dc.ws-eu114.gitpod.io']
 
 # Application definition
 

@@ -6,7 +6,7 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -18,7 +18,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black ml-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Helmets
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="helmet-link">
@@ -31,57 +31,58 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black ml-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hurls
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="hurl-link">
-                <a href="{% url 'products' %}?category=curran,hurls" class="dropdown-item">Curran Hurls</a>
-                <a href="{% url 'products' %}?category=farrell,hurls" class="dropdown-item">Farrell Hurls</a>
-                <a href="{% url 'products' %}?category=moran,hurls" class="dropdown-item">Moran Hurls</a>
-                <a href="{% url 'products' %}?category=maher,handmade,hurls" class="dropdown-item">Maher Handmade Hurls</a>
+                <a href="{% url 'products' %}?category=curran_hurls" class="dropdown-item">Curran Hurls</a>
+                <a href="{% url 'products' %}?category=farrell_hurls" class="dropdown-item">Farrell Hurls</a>
+                <a href="{% url 'products' %}?category=moran_hurls" class="dropdown-item">Moran Hurls</a>
+                <a href="{% url 'products' %}?category=maher_handmade_hurls" class="dropdown-item">Maher Handmade Hurls</a>
                 <a href="{% url 'products' %}?category=recommendations" class="dropdown-item">Hurl Recommendations</a>
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black ml-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sliotars
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=training,sliotars" class="dropdown-item">Training Sliotars</a>
-                <a href="{% url 'products' %}?category=championship,sliotars" class="dropdown-item">Championship Sliotars</a>
-                <a href="{% url 'products' %}?category=karakal,sliotars" class="dropdown-item">Karakal Sliotars</a>
-                <a href="{% url 'products' %}?category=omeara,o'meara,sliotars" class="dropdown-item">O'Meara Sliotars</a>
+                <a href="{% url 'products' %}?category=training_sliotars" class="dropdown-item">Training Sliotars</a>
+                <a href="{% url 'products' %}?category=championship_sliotars" class="dropdown-item">Championship Sliotars</a>
+                <a href="{% url 'products' %}?category=karakal_sliotars" class="dropdown-item">Karakal Sliotars</a>
+                <a href="{% url 'products' %}?category=omeara,o'meara_sliotars" class="dropdown-item">O'Meara Sliotars</a>
                 <a href="{% url 'products' %}?category=recommendations" class="dropdown-item">Sliotar Recommendations</a>
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 ml-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=kids,starter,pack,packs" class="dropdown-item">Kids Starter Pack</a>
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?category=recommendations" class="dropdown-item">All Recommendations</a>
+                <a href="{% url 'products' %}?category=grips" class="dropdown-item">Grips</a>
+                <a href="{% url 'products' %}?category=ashguard" class="dropdown-item">Ashguard</a>
+                <a href="{% url 'products' %}?category=shin,guard" class="dropdown-item">Shin Guard</a> 
+                <a href="{% url 'products' %}?category=bags" class="dropdown-item">Bags</a>                
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="promotions-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-warning" href="#" id="promotions-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Promotions
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'promotions' %}?category=helmets" class="dropdown-item">Helmets</a>
-                <a href="{% url 'promotions' %}?category=hurls" class="dropdown-item">Hurls</a>
-                <a href="{% url 'promotions' %}?category=sliotars" class="dropdown-item">Sliotars</a>
+                <a href="{% url 'promotional_page' %}?category=helmets" class="dropdown-item">Helmets</a>
+                <a href="{% url 'promotional_page' %}?category=hurls" class="dropdown-item">Hurls</a>
+                <a href="{% url 'promotional_page' %}?category=sliotars" class="dropdown-item">Sliotars</a>
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="reviews-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-warning ml-5" href="#" id="reviews-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Reviews
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'reviews' %}?category=helmets" class="dropdown-item">Popular Helmets</a>
-                <a href="{% url 'reviews' %}?category=hurls" class="dropdown-item">Popular Hurls</a>
-                <a href="{% url 'reviews' %}?category=sliotars" class="dropdown-item">Popular Sliotars</a>
+                <a href="{% url 'products' %}?category=helmets" class="dropdown-item">Popular Helmets</a>
+                <a href="{% url 'products' %}?category=hurls" class="dropdown-item">Popular Hurls</a>
+                <a href="{% url 'products' %}?category=sliotars" class="dropdown-item">Popular Sliotars</a>
             </div>
         </li>
     </ul>

@@ -5,4 +5,4 @@ from .models import PromotionalPlayer
 def promotional_page(request):
     players = PromotionalPlayer.objects.all()
     return render(
-        request, 'promotions/promotional_page.html', {'players': players})
+        request, 'promotions/promotions.html', {'players': players})
