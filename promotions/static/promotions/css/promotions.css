@@ -1,0 +1,21 @@
+.header-container {
+    margin-bottom: 20px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #333;
+}

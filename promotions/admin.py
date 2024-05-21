@@ -1,10 +1,11 @@
 from django.contrib import admin
-
 from .models import PromotionalPlayer
+from cloudinary.models import CloudinaryField
 
-class PromotionalPlayer(admin.ModelAdmin):
+class PromotionalPlayerAdmin(admin.ModelAdmin):
     list_display = (
         'image',
+        'image_url',
         'name',
         'age',
         'team',
@@ -13,4 +14,6 @@ class PromotionalPlayer(admin.ModelAdmin):
         'product',
     )
 
-admin.site.register(Product, ProductAdmin)
+admin.site.register(PromotionalPlayer, PromotionalPlayerAdmin)
+
+

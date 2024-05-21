@@ -23,6 +23,28 @@
                 <hr>
             </div>
         </div>
+    {% for player in players %}
+    <div class="row mb-4">
+        <div class="col-md-4">
+            {% if player.image %}
+            <a href="{% url 'promotions' promotions.id %}"></a>
+            <img class="card-img-top img-fluid" src="{{ player.image.url }}" alt="{{ player.name }}" class="img-fluid">
+            </a>
+            {% else %}
+            <img class="card-img-top img-fluid" src="{{ player.image_url }}" alt="{{ player.name }}" class="img-fluid">
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <h3>{{ player.name }}</h3>
+            <p><strong>Age:</strong> {{ player.age }}</p>
+            <p><strong>Team:</strong> {{ player.team }}</p>
+            <p><strong>Medals:</strong> {{ player.medals }}</p>
+            <p><strong>Product to Promote:</strong> {{ player.product.name }}</p>
+            <p><strong>Product Image:</strong> {{ player.product.image }}</p>
+            <p>{{ player.promotion_paragraph }}</p>
+        </div>
+    </div>
+    {% endfor %}
 
 {% endblock %}
 
