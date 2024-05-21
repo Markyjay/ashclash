@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'promotions',
+    'review',
 ]
 
 MIDDLEWARE = [

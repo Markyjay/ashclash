@@ -6,12 +6,14 @@ from django.db.models import Q
 from .models import Product, Category
 from django.db.models.functions import Lower
 from .forms import ProductForm
-
+from review.models import Review
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    products = Product.objects.all()
+    products = Product.objects.all().annotate(
+        reviews_average=Avg('review__rating'),
+        reviews_count=Count('review'))
     query = None
     categories = None
     sort = None
