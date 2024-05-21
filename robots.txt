@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /user-profile/
+Disallow: /checkout/
+Disallow: /cart/
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://www.ashclash.com/sitemap.xml
