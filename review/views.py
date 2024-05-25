@@ -2,11 +2,22 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+
 from .models import Review
 from products.models import Product
 
 from .forms import ReviewForm
 
+
+def list_reviews(request):
+    """ """
+    reviews = Review.objects.all()
+
+    context = {
+        'reviews': reviews,
+    }
+
+    return render(request, 'review/reviews.html', context)
 
 @login_required
 def create_review(request, product_id):
@@ -17,42 +28,6 @@ def create_review(request, product_id):
     who is logged in and has purchased the product.
     """
     product = Product.objects.get(id=product_id)
-    user = request.user
-    user_profile = user.userprofile
-
-    # checking if the user has orders
-    if not user_profile.orders.all():
-        messages.error(
-            request, "You must have purchased this product to review it.")
-        return redirect('product_detail', product_id)
-
-    # check if the user has orders and the product is in
-    # one of the orders, if not then the user can't review
-    orders = user_profile.orders.all()
-    product_purchased = False
-
-    for order in orders:
-        for item in order.line_items.all():
-            if item.product == product:
-                product_purchased = True
-                break
-        if product_purchased:
-            break
-
-    if not product_purchased:
-        messages.error(
-            request, "You must have purchased this product to review it.")
-        return redirect('product_detail', product_id)
-
-    # check if the user has already reviewed the product
-    # if they have, then they can't review it again
-    review_exists = Review.objects.filter(product=product, user=user).exists()
-
-    if review_exists:
-        messages.error(
-            request, "You have already reviewed this product, "
-            "please update or delete your existing review.")
-        return redirect('product_detail', product_id)
 
     form = ReviewForm()
 
@@ -62,7 +37,6 @@ def create_review(request, product_id):
         rating = request.POST['rating']
         review = Review(
             product=product,
-            user=user,
             title=title,
             text=text,
             rating=rating
@@ -129,27 +103,3 @@ def delete_review(request, review_id):
 
     messages.success(request, "Your review has been deleted.")
     return redirect('product_detail', product.id)
-
-
-@login_required
-def recommend(request, review_id):
-    """
-    View to toggle helpful votes on a review. If the
-    user has already voted, the vote is removed. If the
-    user hasn't voted, the vote is added.
-    """
-    review = Review.objects.get(id=review_id)
-    user = request.user
-
-    if not user.is_authenticated:
-        messages.error(request, "You must be logged in to upvote.")
-        return redirect('product_detail', review.product.id)
-
-    if user in review.recommend.all():
-        review.recommend.remove(user)
-        messages.success(request, "You have removed your upvote.")
-    else:
-        review.recommend.add(user)
-        messages.success(request, "You have added your upvote.")
-
-    return redirect('product_detail', review.product.id)

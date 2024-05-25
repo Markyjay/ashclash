@@ -65,25 +65,13 @@
                 <a href="{% url 'products' %}?category=bags" class="dropdown-item">Bags</a>                
             </div>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-warning" href="#" id="promotions-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-warning" href="{% url 'promotional_page' %}" id="promotions-link">
                 Promotions
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'promotional_page' %}?category=helmets" class="dropdown-item">Helmets</a>
-                <a href="{% url 'promotional_page' %}?category=hurls" class="dropdown-item">Hurls</a>
-                <a href="{% url 'promotional_page' %}?category=sliotars" class="dropdown-item">Sliotars</a>
-            </div>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-warning ml-5" href="#" id="reviews-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-warning" href="{% url 'reviews' %}" id="reviews-link">
                 Reviews
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=helmets" class="dropdown-item">Popular Helmets</a>
-                <a href="{% url 'products' %}?category=hurls" class="dropdown-item">Popular Hurls</a>
-                <a href="{% url 'products' %}?category=sliotars" class="dropdown-item">Popular Sliotars</a>
-            </div>
         </li>
     </ul>
 </div>

@@ -4,7 +4,10 @@ from django.contrib.auth.decorators import login_required
 
 from django.db.models import Q
 from .models import Product, Category
+from django.db.models import Avg, Count
 from django.db.models.functions import Lower
+
+from .models import Product
 from .forms import ProductForm
 from review.models import Review
 

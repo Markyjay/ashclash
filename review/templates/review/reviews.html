@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'review/css/reviews.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                <h1 class="page-title">Product Reviews</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% if reviews %}
+                    <div class="reviews-list">
+                        {% for review in reviews %}
+                            <div class="review-item">
+                                <h3 class="review-title">{{ review.title }}</h3>
+                                <div class="review-details">
+                                    <span class="review-product">{{ review.product.name }}</span>
+                                    <span class="review-rating">Rating: {{ review.rating }}/5</span>
+                                    <span class="review-date">{{ review.created_at|date:"F j, Y" }}</span>
+                                </div>
+                                <p class="review-text">{{ review.text }}</p>
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No reviews available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'review/js/reviews.js' %}"></script>
+{% endblock %}
