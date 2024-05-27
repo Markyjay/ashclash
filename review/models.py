@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from django.db import models
 
 from products.models import Product
@@ -12,8 +11,6 @@ class Review(models.Model):
     """
     product = models.ForeignKey(
         Product, null=False, blank=False, on_delete=models.CASCADE)
-    user = models.ForeignKey( 
-        User, null=False, blank=False, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField(max_length=400)
     rating = models.IntegerField()
