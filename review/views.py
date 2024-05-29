@@ -29,9 +29,13 @@ def create_review(request, product_id):
     """
     product = Product.objects.get(id=product_id)
 
-    if not OrderLineItem.objects.filter(order__user_profile=request.user.profile, product=product).exists():
-        raise PermissionDenied("You must purchase the product before reviewing.")
-
+    if not OrderLineItem.objects.filter(order__user_profile=request.user.userprofile, product=product).exists():
+        messages.error(
+            request, "You must have purchased this product to review it.")
+        print (messages.error)
+        return redirect('product_detail', product_id)
+    else:
+        pass
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():

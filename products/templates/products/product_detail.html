@@ -102,30 +102,10 @@
                                 </a>
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Basket">
                             </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-                    <div class="reviews-section mt-5">
-                        <h2 class="h4">Reviews</h2>
-                        <a href="{% url 'create_review' product.id %}" class="btn btn-primary mb-3">Add a Review</a>
-                        {% if product.reviews.exists %}
-                            <ul class="list-group">
-                                {% for review in product.reviews.all %}
-                                    <li class="list-group-item">
-                                        <strong>{{ review.user.username }}</strong>
-                                        <span class="text-muted">- {{ review.rating }} / 5</span>
-                                        <p>{{ review.content }}</p>
-                                        {% if review.user == request.user %}
-                                            <a href="{% url 'edit_review' review.id %}" class="btn btn-sm btn-secondary">Edit</a>
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        {% else %}
-                            <p>No reviews yet.</p>
-                        {% endif %}
-                    </div>
                 </div>
             </div>
         </div>

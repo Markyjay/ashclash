@@ -93,6 +93,22 @@
                                                 </small>
                                             {% endif %}
                                         </div>
+                                        <div class="reviews-section mt-5">
+                                            <h2 class="h4">Reviews</h2>
+                                            <a href="{% url 'create_review' product.id %}" class="btn btn-primary mb-3">Add a Review</a>
+                                            {% if product.reviews.exists %}
+                                                <ul class="list-group">
+                                                    {% for review in product.reviews.all %}
+                                                        <li class="list-group-item">
+                                                            <span class="text-muted">- {{ review.rating }} / 5</span>
+                                                            <p>{{ review.content }}</p>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% else %}
+                                                <p>No reviews yet.</p>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
