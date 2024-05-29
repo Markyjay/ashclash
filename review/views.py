@@ -1,16 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from django.core.exceptions import PermissionDenied
 
 from .models import Review
 from products.models import Product
-
+from checkout.models import Order, OrderLineItem
 from .forms import ReviewForm
 
 
 def list_reviews(request):
-    """ """
+    """View to list all reviews."""
     reviews = Review.objects.all()
 
     context = {
@@ -29,22 +29,20 @@ def create_review(request, product_id):
     """
     product = Product.objects.get(id=product_id)
 
-    form = ReviewForm()
+    if not OrderLineItem.objects.filter(order__user_profile=request.user.profile, product=product).exists():
+        raise PermissionDenied("You must purchase the product before reviewing.")
 
     if request.method == 'POST':
-        title = request.POST['title']
-        text = request.POST['text']
-        rating = request.POST['rating']
-        review = Review(
-            product=product,
-            title=title,
-            text=text,
-            rating=rating
-        )
-        review.save()
-
-        messages.success(request, "Your review has been added.")
-        return redirect('product_detail', product_id)
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+            messages.success(request, "Your review has been added.")
+            return redirect('product_detail', product_id=product.id)
+    else:
+        form = ReviewForm()
 
     context = {
         'product': product,
@@ -62,32 +60,23 @@ def edit_review(request, review_id):
     with the review data. The review is then updated
     and saved to the database.
     """
-    review = Review.objects.get(id=review_id)
-    product = review.product
-    form = ReviewForm(initial={
-        'title': review.title,
-        'text': review.text,
-        'rating': review.rating
-    })
-
+    review = get_object_or_404(Review, id=review_id)
+    if review.user != request.user:
+        raise PermissionDenied("You can only edit your own reviews.")
+    
     if request.method == 'POST':
-        title = request.POST['title']
-        text = request.POST['text']
-        rating = request.POST['rating']
-        review.title = title
-        review.text = text
-        review.rating = rating
-        review.save()
-
-        messages.success(request, "Your review has been updated.")
-        return redirect('product_detail', product.id)
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your review has been updated.")
+            return redirect('product_detail', product_id=review.product.id)
+    else:
+        form = ReviewForm(instance=review)
 
     context = {
-        'product': product,
         'form': form,
         'review': review,
     }
-
     return render(request, 'review/edit_review.html', context)
 
 
@@ -97,9 +86,10 @@ def delete_review(request, review_id):
     View to delete a review. The review is retrieved
     from the database and then deleted.
     """
-    review = Review.objects.get(id=review_id)
-    product = review.product
+    review = get_object_or_404(Review, id=review_id)
+    if review.user != request.user:
+        raise PermissionDenied("You can only delete your own reviews.")
+    
     review.delete()
-
     messages.success(request, "Your review has been deleted.")
-    return redirect('product_detail', product.id)
+    return redirect('product_detail', product_id=review.product.id)

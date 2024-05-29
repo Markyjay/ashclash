@@ -19,25 +19,22 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col">
-                {% if reviews %}
-                    <div class="reviews-list">
-                        {% for review in reviews %}
-                            <div class="review-item">
-                                <h3 class="review-title">{{ review.title }}</h3>
-                                <div class="review-details">
-                                    <span class="review-product">{{ review.product.name }}</span>
-                                    <span class="review-rating">Rating: {{ review.rating }}/5</span>
-                                    <span class="review-date">{{ review.created_at|date:"F j, Y" }}</span>
+            <div class="row">
+                {% for review in reviews %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ review.title }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ review.product.name }}</h6>
+                                <div class="d-flex justify-content-between">
+                                    <span class="badge badge-primary">Rating: {{ review.rating }}/5</span>
+                                    <small class="text-muted">{{ review.created_at|date:"F j, Y" }}</small>
                                 </div>
-                                <p class="review-text">{{ review.text }}</p>
+                                <p class="card-text mt-3">{{ review.text }}</p>
                             </div>
-                            <hr>
-                        {% endfor %}
+                        </div>
                     </div>
-                {% else %}
-                    <p>No reviews available.</p>
-                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

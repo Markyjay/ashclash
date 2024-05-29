@@ -56,14 +56,13 @@
                     <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
-                            {% with product.has_sizes as s %}
-                            {% if s %}
+                            {% with product.has_sizes as adult %}
+                            {% if adult %}
                                 <div class="col-12">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value="s" selected>S</option>
-                                        <option value="m">M</option>
-                                        <option value="xl">XL</option>
+                                        <option value="adult" selected>Adult</option>
+                                        <option value="kids">Kids</option>
                                     </select>
                                 </div>
                             {% endif %}
@@ -107,6 +106,26 @@
                             {% endwith %}
                         </div>
                     </form>
+                    <div class="reviews-section mt-5">
+                        <h2 class="h4">Reviews</h2>
+                        <a href="{% url 'create_review' product.id %}" class="btn btn-primary mb-3">Add a Review</a>
+                        {% if product.reviews.exists %}
+                            <ul class="list-group">
+                                {% for review in product.reviews.all %}
+                                    <li class="list-group-item">
+                                        <strong>{{ review.user.username }}</strong>
+                                        <span class="text-muted">- {{ review.rating }} / 5</span>
+                                        <p>{{ review.content }}</p>
+                                        {% if review.user == request.user %}
+                                            <a href="{% url 'edit_review' review.id %}" class="btn btn-sm btn-secondary">Edit</a>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>No reviews yet.</p>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

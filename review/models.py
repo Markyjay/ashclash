@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 from products.models import Product
 
 class Review(models.Model):
@@ -9,6 +9,7 @@ class Review(models.Model):
     rating and helpful votes. A user must have ordered
     the product to create a review.
     """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     product = models.ForeignKey(
         Product, null=False, blank=False, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
