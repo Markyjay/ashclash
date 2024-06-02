@@ -1,21 +1,132 @@
-.header-container {
-    margin-bottom: 20px;
+/* General container styling */
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.img-fluid {
-    max-width: 100%;
-    height: auto;
+/* Overlay */
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
-h3 {
-    margin-top: 0;
-    font-size: 24px;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-strong {
+/* Header styling */
+h2.logo-font {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
     color: #333;
+}
+
+/* Player section styling */
+.row.mb-4 {
+    margin-bottom: 2rem !important;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Player image styling */
+.card-img-top.img-fluid {
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Player details */
+.col-md-8 h3 {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.col-md-8 p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Product section styling */
+.product {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.product .card-body {
+    padding: 10px;
+}
+
+.product p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Product image styling */
+.product img {
+    border-radius: 8px;
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Promotion paragraph styling */
+.promotion-paragraph {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Button styles (if needed) */
+.btn-outline-black {
+    border: 2px solid #333;
+    color: #333;
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+.btn-outline-black:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-black {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #333;
+    transition: all 0.3s;
+}
+
+.btn-black:hover {
+    background-color: #555;
+    border-color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-md-4, .col-md-8 {
+        text-align: center;
+    }
+
+    .col-md-8 h3 {
+        margin-top: 10px;
+    }
+
+    .col-md-8 p {
+        margin-top: 5px;
+    }
 }

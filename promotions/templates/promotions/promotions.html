@@ -23,31 +23,42 @@
                 <hr>
             </div>
         </div>
-    {% for player in players %}
-    <div class="row mb-4">
-        <div class="col-md-4">
-            {% if player.image %}
-            <a href="{% url 'promotional_page'%}">
-            <img class="card-img-top img-fluid" src="{{ player.image.url }}" alt="{{ player.name }}" class="img-fluid">
-            </a>
-            {% else %}
-            <img class="card-img-top img-fluid" src="{{ player.image_url }}" alt="{{ player.name }}" class="img-fluid">
-            {% endif %}
+        {% for player in players %}
+        <div class="row mb-4">
+            <div class="col-md-4">
+                {% if player.image %}
+                <a href="{% url 'promotional_page' %}">
+                    <img class="card-img-top img-fluid" src="{{ player.image.url }}" alt="{{ player.name }}">
+                </a>
+                {% else %}
+                    <img class="card-img-top img-fluid" src="{{ player.image_url }}" alt="{{ player.name }}">
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <h3>{{ player.name }}</h3>
+                <p><strong>Age:</strong> {{ player.age }}</p>
+                <p><strong>Team:</strong> {{ player.team }}</p>
+                <p><strong>Medals:</strong> {{ player.medals }}</p>
+                <p>{{ player.promotion_paragraph }}</p>
+                <div class="product mb-4">
+                    <div class="card-body pb-0">
+                        <p class="mb-0">{{ player.product.name }}</p>
+                    </div>
+                    <a href="{% url 'product_detail' player.product.id %}">
+                        {% if player.product.image %}
+                        <img class="card-img-top img-fluid" src="{{ player.product.image.url }}" alt="{{ player.product.name }}">
+                        {% elif player.product.image_url %}
+                        <img class="card-img-top img-fluid" src="{{ player.product.image_url }}" alt="{{ player.product.name }}">
+                        {% else %}
+                        <img class="card-img-top img-fluid" src="https://res.cloudinary.com/dywqmlkp8/image/upload/v1715808884/AshClash%20Images/logo/logo_pl37is.jpg" alt="{{ player.product.name }}">
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-8">
-            <h3>{{ player.name }}</h3>
-            <p><strong>Age:</strong> {{ player.age }}</p>
-            <p><strong>Team:</strong> {{ player.team }}</p>
-            <p><strong>Medals:</strong> {{ player.medals }}</p>
-            <p><strong>Product to Promote:</strong> {{ player.product.name }}</p>
-            <p><strong>Product Image:</strong> {{ player.product.image }}</p>
-            <p>{{ player.promotion_paragraph }}</p>
-        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-
 {% endblock %}
 
 {% block postloadjs %}
-
 {% endblock %}
