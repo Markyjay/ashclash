@@ -10,35 +10,39 @@
 {% endblock %}
 
 {% block content %}
-<section class="container py-5" id="edit-review-section">
-  <h1 class="h1">Edit your review</h1>
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <form method="POST" action="{% url 'edit_review' review.id %}" class="form mb-2">
-        {% csrf_token %}
-        {% for field in form %}
-        {% if field.name == 'rating' %}
-        <div class="form-group">
-          <label for="{{ field.id_for_label }}">Rating *</label>
-          <div class="rating mb-3">
-            {% for i in 5|get_range %}
-            <i class="fa-{% if review.rating < i|add:1 %}regular{% else %}solid{% endif %} fa-star fa-xl"
-              data-value="{{ i|add:1 }}"></i>
+<div class="d-flex align-items-center justify-content-center min-vh-100">
+  <section class="container py-5" id="edit-review-section">
+    <h1 class="h1">Edit your review</h1>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <form method="POST" action="{% url 'edit_review' review.id %}" class="form mb-2">
+          {% csrf_token %}
+          {% for field in form %}
+          {% if field.name == 'rating' %}
+          <div class="form-group">
+            <label for="{{ field.id_for_label }}">Rating *</label>
+            <div class="rating mb-3">
+              {% for i in 5|get_range %}
+              <i class="fa-{% if review.rating < i|add:1 %}regular{% else %}solid{% endif %} fa-star fa-xl"
+                data-value="{{ i|add:1 }}"></i>
+              {% endfor %}
+              <input type="hidden" name="rating" id="rating" value="{{ review.rating }}">
+            </div>
+            {% else %}
+            <div class="form-group">
+              {{ field|as_crispy_field }}
+            </div>
+            {% endif %}
             {% endfor %}
-            <input type="hidden" name="rating" id="rating" value="{{review.rating}}">
-          </div>
-          {% else %}
-          {{ field|as_crispy_field }}
-          {% endif %}
-          {% endfor %}
-          <div class="text-right">
-            <a class="btn btn-outline-primary" href="{% url 'product_detail' product.id %}">Cancel</a>
-            <button class="btn btn-primary" type="submit">Add review</button>
-          </div>
-      </form>
+            <div class="text-right">
+              <a class="btn btn-dark" href="{% url 'product_detail' product.id %}">Cancel</a>
+              <button class="btn btn-success btn-outline-dark" type="submit">Save Review</button>
+            </div>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 {% endblock %}
 
 {% block post_load_js %}
@@ -78,6 +82,9 @@
         }
       });
     }
+
+    // Initialize with current rating
+    highlightStars(ratingInput.value);
   });
 </script>
 {% endblock %}

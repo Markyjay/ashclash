@@ -9,36 +9,40 @@
 {% endblock %}
 
 {% block content %}
-<section class="container py-5" id="create-review-section">
-  <h1 class="h1">Add a review</h1>
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <form method="POST" action="{% url 'create_review' product.id %}" class="form mb-2">
-        {% csrf_token %}
-        {% for field in form %}
-        {% if field.name == 'rating' %}
-        <div class="form-group">
-          <label for="{{ field.id_for_label }}">Rating *</label>
-          <div class="rating mb-3">
-            <i class="fa-regular fa-star fa-xl" data-value="1"></i>
-            <i class="fa-regular fa-star fa-xl" data-value="2"></i>
-            <i class="fa-regular fa-star fa-xl" data-value="3"></i>
-            <i class="fa-regular fa-star fa-xl" data-value="4"></i>
-            <i class="fa-regular fa-star fa-xl" data-value="5"></i>
-            <input type="hidden" name="rating" id="rating">
-          </div>
-          {% else %}
-          {{ field|as_crispy_field }}
-          {% endif %}
-          {% endfor %}
-          <div class="text-right">
-            <a class="btn btn-outline-primary" href="{% url 'product_detail' product.id %}">Cancel</a>
-            <button class="btn btn-primary" type="submit">Add review</button>
-          </div>
-      </form>
+<div class="d-flex align-items-center justify-content-center min-vh-100">
+  <section class="container py-5" id="create-review-section">
+    <h1 class="h1">Your Review</h1>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <form method="POST" action="{% url 'create_review' product.id %}" class="form mb-2">
+          {% csrf_token %}
+          {% for field in form %}
+          {% if field.name == 'rating' %}
+          <div class="form-group">
+            <label for="{{ field.id_for_label }}">Rating *</label>
+            <div class="rating mb-3">
+              <i class="fa-regular fa-star fa-xl" data-value="1"></i>
+              <i class="fa-regular fa-star fa-xl" data-value="2"></i>
+              <i class="fa-regular fa-star fa-xl" data-value="3"></i>
+              <i class="fa-regular fa-star fa-xl" data-value="4"></i>
+              <i class="fa-regular fa-star fa-xl" data-value="5"></i>
+              <input type="hidden" name="rating" id="rating">
+            </div>
+            {% else %}
+            <div class="form-group">
+              {{ field|as_crispy_field }}
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="text-right">
+              <a class="btn btn-dark" href="{% url 'product_detail' product.id %}">Cancel</a>
+              <button class="btn btn-success btn-outline-dark" type="submit">Add Review</button>
+            </div>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 {% endblock %}
 
 {% block post_load_js %}

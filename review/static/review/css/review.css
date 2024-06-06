@@ -1,0 +1,49 @@
+/* Container with a transparent background image */
+#create-review-section {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#create-review-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://res.cloudinary.com/dywqmlkp8/image/upload/v1717684272/AshClash%20images/grass_background_n4jzia.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 8px;
+  opacity: 0.8; /* Transparency level for the background image */
+  z-index: -1; /* Ensure it stays behind the form content */
+}
+
+/* Form group styling */
+.form-group {
+  position: relative;
+  z-index: 1; /* Ensure form content stays above the background image */
+}
+
+
+/* Text color change for better contrast */
+#create-review-section,
+#create-review-section h1,
+#create-review-section label,
+#create-review-section .form-group {
+    color: #ffffff; /* Change text color to white */
+}
+
+/* Rating stars styling */
+.rating i {
+    color: #ffffff; /* Change the color of the stars to white */
+}
+
+.rating i.selected {
+    color: #ffd700; /* Change the color of selected stars to gold (optional) */
+}
+
+/* Rating styling */
+.rating {
+  cursor: pointer;
+}
