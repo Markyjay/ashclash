@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'django.contrib.sites',  # need to check necessity
     'allauth',
@@ -52,8 +53,7 @@ INSTALLED_APPS = [
     'products',
     'basket',
     'checkout',
-    'profiles',
-    'cloudinary_storage',
+    'profiles', 
     'cloudinary',
     'crispy_forms',
     'promotions',
