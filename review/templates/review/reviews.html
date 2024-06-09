@@ -2,53 +2,50 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'review/css/reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'review/css/review.css' %}">
 {% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
             <div class="col">
-                <h1 class="page-title">Product Reviews</h1>
+                <h1 class="page-title product">Product Reviews</h1>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
+    <div class="container review-container">
         <div class="row">
-            <div class="row">
-                {% for review in reviews %}
-                    <div class="col-md-6 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ review.title }}</h5>
-                                <div class="product mb-4">
-                                    <div class="card-body pb-0">
-                                        <p class="mb-0">{{ review.product.name }}</p>
-                                    </div>
-                                    <a href="{% url 'product_detail' review.product.id %}">
-                                        {% if review.product.image %}
-                                        <img class="card-img-top img-fluid" src="{{ review.product.image.url }}" alt="{{ player.product.name }}">
-                                        {% elif review.product.image_url %}
-                                        <img class="card-img-top img-fluid" src="{{ review.product.image_url }}" alt="{{ player.product.name }}">
-                                        {% else %}
-                                        <img class="card-img-top img-fluid" src="https://res.cloudinary.com/dywqmlkp8/image/upload/v1715808884/AshClash%20Images/logo/logo_pl37is.jpg" alt="{{ player.product.name }}">
-                                        {% endif %}
-                                    </a>
+            {% for review in reviews %}
+                <div class="col-md-6 mb-4">
+                    <div class="card review-background">
+                        <div class="card-body product m-5">
+                            <h5 class="card-title">{{ review.title }}</h5>
+                            <div class="product pb-0">
+                                <div class="card-body pb-0">
+                                    <p class="mb-0">{{ review.product.name }}</p>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <span class="badge badge-primary">Rating: {{ review.rating }}/5</span>
-                                    <small class="text-muted">{{ review.created_at|date:"F j, Y" }}</small>
-                                </div>
-                                <p class="card-text mt-3">{{ review.text }}</p>
+                                <a href="{% url 'product_detail' review.product.id %}">
+                                    {% if review.product.image %}
+                                        <img class="card-img-top img-fluid" src="{{ review.product.image.url }}" alt="{{ review.product.name }}">
+                                    {% elif review.product.image_url %}
+                                        <img class="card-img-top img-fluid" src="{{ review.product.image_url }}" alt="{{ review.product.name }}">
+                                    {% else %}
+                                        <img class="card-img-top img-fluid" src="https://res.cloudinary.com/dywqmlkp8/image/upload/v1715808884/AshClash%20Images/logo/logo_pl37is.jpg" alt="{{ review.product.name }}">
+                                    {% endif %}
+                                </a>
                             </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="badge badge-dark">Rating: {{ review.rating }}/5</span>
+                                <small class="text-muted">{{ review.created_at|date:"F j, Y" }}</small>
+                            </div>
+                            <p class="card-text mt-3">{{ review.text }}</p>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
