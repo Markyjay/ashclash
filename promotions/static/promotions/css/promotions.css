@@ -1,20 +1,8 @@
 /* General container styling */
 .container {
-    background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Overlay */
-.overlay {
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 }
 
 /* Header styling */
@@ -23,43 +11,50 @@ h2.logo-font {
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    color: #333;
+    color: #000000;
+}
+
+/* Background image */
+.background-image {
+    background: url("https://res.cloudinary.com/dywqmlkp8/image/upload/v1717684272/AshClash%20images/grass_background_n4jzia.jpg") no-repeat;
+    background-size: cover;
+    border-radius: 8px;
 }
 
 /* Player section styling */
 .row.mb-4 {
     margin-bottom: 2rem !important;
-    background-color: #fff;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
 }
 
 /* Player image styling */
 .card-img-top.img-fluid {
     border-radius: 8px;
     margin-bottom: 10px;
-    max-height: 300px;
+    max-width: 300px;
+    max-height: auto;
     object-fit: cover;
-    width: 100%;
 }
 
 /* Player details */
 .col-md-8 h3 {
     font-size: 1.5rem;
-    color: #555;
+    color: #000000;
 }
 
 .col-md-8 p {
     font-size: 1rem;
-    color: #666;
+    color: #000000;
     line-height: 1.6;
 }
 
 /* Product section styling */
 .product {
     margin-top: 20px;
-    background-color: #f5f5f5;
+    background-color: #f4b300;
+    max-width: 300px;
     padding: 10px;
     border-radius: 8px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -72,7 +67,7 @@ h2.logo-font {
 .product p {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #333;
+    color: #000000;
 }
 
 /* Product image styling */
@@ -87,27 +82,27 @@ h2.logo-font {
 .promotion-paragraph {
     margin-top: 10px;
     font-size: 1rem;
-    color: #444;
+    color: #000000;
     line-height: 1.6;
 }
 
 /* Button styles (if needed) */
 .btn-outline-black {
-    border: 2px solid #333;
-    color: #333;
+    border: 2px solid #000000;
+    color: #000000;
     background-color: transparent;
     transition: all 0.3s;
 }
 
 .btn-outline-black:hover {
     background-color: #333;
-    color: #fff;
+    color: #f4b300;
 }
 
 .btn-black {
     background-color: #333;
-    color: #fff;
-    border: 2px solid #333;
+    color: #f4b300;
+    border: 2px solid #000000;
     transition: all 0.3s;
 }
 
