@@ -1,14 +1,18 @@
+import json
+import time
+
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
+import stripe
+
 from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
 
-import json
-import time
+
 
 
 class StripeWH_Handler:
@@ -56,7 +60,7 @@ class StripeWH_Handler:
             intent.latest_charge
         )
 
-        billing_details = intent.charges.data[0].billing_details
+        billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
@@ -158,5 +162,5 @@ class StripeWH_Handler:
         Handle the payment_intent.payment_failed webhook from Stripe
         """
         return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
+            content=f'Payment failed Webhook received: {event["type"]}',
             status=200)
