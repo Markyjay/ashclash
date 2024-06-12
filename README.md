@@ -228,7 +228,234 @@ Comments and reviews have been removed due to lack of time.
 
 ## Future Features
 
+### Models
 
+I created a number of models for my project. I used allauth's models for authentication. Here are the other models and their fields:
+
+#### UserProfile
+
+| **PK** | **id** (unique)         | Type         | Notes                |
+| ------ | ----------------------- | ------------ | -------------------- |
+| **FK** | user                    | OneToOne     | FK to **User** model |
+|        | default_phone_number    | CharField    |                      |
+|        | default_street_address1 | CharField    |                      |
+|        | default_street_address2 | CharField    |                      |
+|        | default_town_or_city    | CharField    |                      |
+|        | default_county          | CharField    |                      |
+|        | default_postcode        | CharField    |                      |
+|        | default_country         | CountryField |                      |
+
+#### Promotions
+
+| **PK**  | **id** (unique) | Type          | Notes                        |
+| ------- | --------------- | ------------- | ---------------------------- |
+| **FK**  | author          | ForeignKey    | FK to **UserProfile** model  |
+|         | title           | CharField     | Unique                       |
+|         | slug            | SlugField     | Unique                       |
+|         | content         | TextField     |                              |
+|         | excerpt         | TextField     |                              |
+| **M2M** | tags            | ManyToMany    | M2M to **Tag** model         |
+| **M2M** | category        | ManyToMany    | M2M to **Category** model    |
+| **M2M** | favourited      | ManyToMany    | M2M to **UserProfile** model |
+|         | featured_image  | ImageField    |                              |
+|         | created_on      | DateTimeField |                              |
+|         | updated_on      | DateTimeField |                              |
+|         | status          | IntegerField  |                              |
+
+#### Category
+
+| **PK** | **id** (unique) | Type      | Notes  |
+| ------ | --------------- | --------- | ------ |
+|        | name            | CharField |        |
+|        | slug            | SlugField | Unique |
+
+#### Order
+
+| **PK** | **id** (unique) | Type         | Notes                       |
+| ------ | --------------- | ------------ | --------------------------- |
+|        | order_number    | CharField    |                             |
+| **FK** | user_profile    | ForeignKey   | FK to **UserProfile** model |
+|        | first_name      | CharField    |                             |
+|        | last_name       | CharField    |                             |
+|        | email           | EmailField   |                             |
+|        | phone_number    | CharField    |                             |
+|        | country         | CountryField |                             |
+|        | postcode        | CharField    |                             |
+|        | town_or_city    | CharField    |                             |
+|        | street_address1 | CharField    |                             |
+|        | street_address2 | CharField    |                             |
+|        | county          | CharField    |                             |
+|        | shipping_cost   | DecimalField |                             |
+|        | order_subtotal  | DecimalField |                             |
+|        | order_total     | DecimalField |                             |
+|        | original_cart   | TextField    |                             |
+|        | stripe_pid      | CharField    |                             |
+|        | order_note      | TextField    |                             |
+
+#### OrderLineItem
+
+| **PK** | **id** (unique) | Type         | Notes                   |
+| ------ | --------------- | ------------ | ----------------------- |
+| **FK** | order           | ForeignKey   | FK to **Order** model   |
+| **FK** | product         | ForeignKey   | FK to **Product** model |
+|        | quantity        | IntegerField |                         |
+|        | line_item_total | DecimalField |                         |
+
+#### Product
+
+| **PK** | **id** (unique) | Type         | Notes |
+| ------ | --------------- | ------------ | ----- |
+|        | sku             | CharField    |       |
+|        | name            | CharField    |       |
+|        | description     | TextField    |       |
+|        | price           | DecimalField |       |
+|        | image           | ImageField   |       |
+
+#### Review
+
+| **PK** | **id** (unique) | Type       | Notes                   |
+| ------ | --------------- | ---------- | ----------------------- |
+| **FK** | product         | ForeignKey | FK to **Product** model |
+| **FK** | user            | ForeignKey | FK to **User** model    |
+|        | title           | CharField  |                         |
+
+## Business Model
+
+AshClash is dedicated to providing high-quality, specialized hurling equipment and accessories. Our product range includes hurls, helmets, sliotars, and various other accessories tailored to meet the unique needs of hurling players. We focus on quality, safety, and performance to ensure our customers receive the best gear available.
+
+Customers:
+
+Individual Players: Amateur and professional hurling players seeking reliable and durable equipment.
+Teams and Clubs: Local hurling teams and clubs in need of bulk purchases and customized gear.
+Schools and Academies: Educational institutions and training academies looking to equip their students with proper hurling equipment.
+Retailers and Distributors: Sports retailers and distributors interested in stocking high-quality hurling gear.
+
+Channels:
+
+Online Store: Our primary sales channel is the AshClash website, where customers can browse and purchase products directly.
+Social Media: We utilize platforms like Facebook, Instagram, and Twitter for marketing, customer engagement, and direct sales through integrated shopping features.
+Email Marketing: Regular newsletters and promotional emails to keep customers informed about new products, offers, and hurling news.
+Partnerships: Collaborations with local hurling clubs, schools, and sports retailers to expand our reach and presence.
+
+Relationships:
+
+Personalized Service: Offering expert advice and recommendations to customers to help them choose the right products.
+Customer Support: Providing responsive and helpful customer service through email, chat, and phone support.
+Community Engagement: Building a community of hurling enthusiasts through social media, forums, and sponsored events.
+
+Revenue:
+
+Direct Sales: Revenue from selling hurling equipment and accessories through our online store.
+Bulk Orders: Discounted bulk sales to teams, clubs, schools, and retailers.
+Customizations: Additional revenue from personalized and customized gear for teams and individuals.
+Affiliate Marketing: Commission from affiliate links and partnerships with other sports brands.
+
+Key Resources:
+
+Product Inventory: A wide range of high-quality hurling equipment and accessories.
+E-commerce Platform: A robust and user-friendly website for online sales.
+Supply Chain: Reliable suppliers and manufacturers to ensure product quality and availability.
+Marketing Tools: Social media, email marketing, and SEO strategies to drive traffic and sales.
+Customer Data: Insights and analytics to understand customer preferences and improve offerings.
+
+Activities:
+
+Product Sourcing: Continuously sourcing and updating our inventory with the latest and best hurling gear.
+Marketing and Promotion: Implementing effective marketing campaigns to attract and retain customers.
+Customer Service: Providing exceptional support and after-sales service to ensure customer satisfaction.
+Order Fulfillment: Efficiently managing inventory, packing, and shipping orders to customers.
+
+Partnerships:
+
+Suppliers and Manufacturers: Establishing strong relationships with reliable suppliers for quality products.
+Hurling Clubs and Associations: Partnering with clubs and associations for sponsorships and bulk sales.
+Marketing Affiliates: Collaborating with influencers, bloggers, and sports websites for affiliate marketing.
+Logistics Providers: Partnering with logistics companies for efficient order delivery.
+
+Cost Structure:
+
+Product Costs: Expenses related to sourcing and manufacturing hurling equipment and accessories.
+Operational Costs: Website maintenance, staff salaries, and office expenses.
+Marketing Expenses: Costs for digital marketing, advertising, and promotional activities.
+Shipping and Handling: Costs associated with packing and delivering orders to customers.
+Customer Service: Expenses for providing customer support and handling returns.
+
+AshClash aims to become the go-to destination for hurling enthusiasts by offering a comprehensive range of high-quality equipment and accessories. By focusing on customer satisfaction, continuous product improvement, and effective marketing strategies, AshClash is poised to grow and thrive in the niche market of hurling sports.
+
+### Search Engine Optimisation (SEO) and Marketing
+
+#### Marketing
+
+The site has a number of features to help with SEO and marketing. The site has a promotions page, which allows famous hurling players to promote their favourite gear on the site that will help with SEO. You can [click here to access the promotions page](https://ashclash-pp5-8ef04402753f.herokuapp.com/promotions/promotions/). The promotion posts can be shared on social media to drive traffic to the site.
+
+The site also has a Mailchimp newsletter signup form, which can be used to collect emails for marketing purposes. Newsletter form:
+
+![newsletter form](./documentation/features/newsletter-signup-form.png).
+
+The site also has a Facebook business page, which can be used to post content for customers to see, as well as engage with customers through comments and messages. You can [click here to see the AshClash Facebook Page](https://www.facebook.com/profile.php?id=61561113772755). Here is a screenshot of the Facebook Business Page:
+
+![Facebook Business Page](./documentation/facebookcover.png)
+
+#### Keywords
+
+The site has a number of keywords that are used in the content and meta tags to help with SEO. I used the tool [Ubersuggest](https://neilpatel.com/ubersuggest/) to find keywords. I used a combination of short-tail and long-tail keywords and included them in my meta tags. Here are some of the keywords I used:
+
+Keywords 
+- Hurling Equipment
+- Hurling Gear
+- High-Quality Hurling Gear
+- Hurling Helmets
+- Hurls
+- Sliotars
+- Hurling Accessories
+- Ashguards
+- Shinguards
+- Protective Hurling Gear
+- Best Hurling Gear
+- Buy Hurling Equipment
+- Online Hurling Shop
+- Custom Hurling Gear
+- Hurling Clubs Gear
+- Hurling School Equipment
+- Hurling Team Gear
+- Hurling Gear for Kids
+- Hurling Gear for Adults
+- Professional Hurling Equipment
+- Amateur Hurling Equipment
+- Top Hurling Brands
+- Affordable Hurling Gear
+- Durable Hurling Equipment
+- Hurling Training Gear
+- Hurling Practice Gear
+- Hurling Helmets Safety
+- Hurling Sports Equipment
+- Hurling Gear Discounts
+- Premium Hurling Gear
+- Hurling Equipment Reviews
+
+While not all of these keywords are directly related to the products on the site, they are related to the theme of the site. This will help with SEO and driving traffic to the site.
+
+#### Sitemap
+
+I used [XML Siteamaps](https://www.xml-sitemaps.com/) to create a sitemap for the site. The sitemap is submitted to Google Search Console to help with SEO.
+
+#### Robots.txt
+
+I also added a robots.txt file to the site to help with SEO. The robots.txt file is used to tell search engines which pages to crawl and which to ignore. Here is the content of the robots.txt file:
+
+```
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /user-profile/
+Disallow: /checkout/
+Disallow: /cart/
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://www.ashclash.com/sitemap.xml
+```
 
 ___
 

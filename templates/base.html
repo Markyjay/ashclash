@@ -6,28 +6,30 @@
         {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
         {% endblock %}
 
         {% block meta_tags %}
         <meta name="description" content="AshClash is your go-to source for premier hurling equipment. Explore our range of hurling helmets, hurls, sliotars, and accessories to enhance your game. Trusted by professionals and enthusiasts alike.">
-        <meta name="keywords" content="hurling equipment, AshClash, helmets, hurls, sliotars, hurling accessories, professional hurling gear, hurling sport">
+        <meta name="keywords" content="Hurling Equipment, Hurling Gear, High-Quality Hurling Gear, Hurling Helmets, Hurls, Sliotars, Hurling Accessories, Ashguards, Protective Hurling Gear, Best Hurling Gear, Buy Hurling Equipment, Online Hurling Shop, Custom Hurling Gear, Hurling Clubs Gear, Hurling School Equipment, Hurling Gear for Kids, Hurling Gear for Adults, Professional Hurling Equipment, Amateur Hurling Equipment, Top Hurling Brands, Affordable Hurling Gear, Durable Hurling Equipment, Hurling Training Gear, Hurling Practice Gear, Hurling Helmets Safety, Hurling Sports Equipment, Hurling Gear Discounts, Premium Hurling Gear, Hurling Equipment Reviews">
         {% endblock %}
 
         {% block corecss %}
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
-            <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% endblock %}
 
         {% block extra_css %}
         {% endblock %}
 
         {% block corejs %}
-            <script src="https://kit.fontawesome.com/4c8381ad3f.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-            <!--$tripe -->
-            <script src="https://js.stripe.com/v3/"></script>
+        <script src="https://kit.fontawesome.com/4c8381ad3f.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <!--$tripe -->
+        <script src="https://js.stripe.com/v3/"></script>
         {% endblock %}
 
         {% block extra_js %}
