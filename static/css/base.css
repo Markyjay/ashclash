@@ -260,6 +260,13 @@ input[name="q"]::placeholder {
   border-radius: 0;
 }
 
+#newsletter_signup {
+  background:#fff;  
+  clear:left; 
+  font:14px Helvetica,Arial,sans-serif; 
+  width: 600px;
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
   .fixed-top-desktop-only {

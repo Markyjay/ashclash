@@ -9,7 +9,7 @@ ___
 
 Welcome to AshClash, your one-stop destination for all things hurling! At AshClash, we're passionate about the great game of hurling, and we're dedicated to providing enthusiasts and newcomers alike with top-quality helmets, hurls, and sliotars. Whether you're a seasoned player looking to upgrade your gear or a parent eager to introduce your child to the excitement of hurling from an early age, AshClash has you covered. Our online store offers a diverse selection of equipment designed to meet the needs of players of all ages and skill levels. Explore our collection today and gear up for your next hurling adventure with AshClash!
 
-Link to live site - []()
+Link to live site - [AshClash Website](https://ashclash-pp5-8ef04402753f.herokuapp.com/)
 
 ## CONTENTS
 
@@ -60,14 +60,14 @@ At AshClash, our primary objective is to foster a thriving community around the 
 
 Three main objectives of the AshClash webite are:
 
-- ### Accessibility:
+- Accessibility:
   We aim to make hurling more accessible to individuals of all backgrounds by providing a convenient online platform where players can easily purchase equipment from anywhere in the world.
 
-- ### Quality:
+- Quality:
   We are committed to offering only the highest quality helmets, hurls, and sliotars to ensure the safety and enjoyment of our customers as they engage in the exhilarating sport of hurling.
 
-- ### Community Building:
-   Beyond being a marketplace, we strive to build a vibrant community around hurling, fostering connections and sharing resources to support players at every stage of their journey, from beginners to seasoned athletes.
+- Community Building:
+  Beyond being a marketplace, we strive to build a vibrant community around hurling, fostering connections and sharing resources to support players at every stage of their journey, from beginners to seasoned athletes.
 ___
 
 # User Experience/UX
@@ -81,8 +81,8 @@ ___
 - Parents and Guardians:
      Another key demographic is parents and guardians who are interested in introducing their children to hurling from an early age. They seek safe and reliable equipment for their young players as they embark on their hurling journey, and they rely on AshClash to provide them with suitable gear and guidance.
 
-- Coaches and Clubs:
-     Finally, we serve coaches and hurling clubs who are responsible for nurturing and developing players at various levels. They turn to AshClash for bulk purchases of equipment to outfit their teams, ensuring that players have access to the necessary gear to excel in training and competition. Our website also serves as a valuable resource for coaches, offering tips, tutorials, and community support to enhance their coaching endeavors.
+- Coaches, Schools and Clubs:
+     We aim to serve coaches, hurling clubs, and schools that are responsible for nurturing and developing players at various levels. They turn to AshClash for bulk purchases of equipment to outfit their teams, ensuring that players have access to the necessary gear to excel in training and competition. Our website also serves as a valuable resource for coaches and educators, offering tips, tutorials, and community support to enhance their coaching and teaching endeavors.
 
 ## User Goals
 
@@ -98,8 +98,8 @@ As a passionate hurling enthusiast, my goal is to access top-quality equipment t
 ### Parents & Guardians' Goals:
 As a parent or guardian interested in introducing my child to hurling, my goal is to find suitable equipment that prioritizes safety and ease of use. I rely on AshClash to provide me with high-quality helmets, hurls, and sliotars specifically designed for young players. I also appreciate resources and recommendations for nurturing my child's interest in hurling and ensuring a positive and enjoyable experience for them.
 
-### Coaches and Clubs' Goals:
-As a coach or representative of a hurling club, my goal is to efficiently source bulk quantities of equipment to outfit my team for training and competition. I require a reliable supplier like AshClash that offers high-quality gear at competitive prices, with options for customization to suit the needs of my players. Additionally, I seek access to educational resources and community support to enhance my coaching effectiveness and foster a strong team dynamic.
+### Coaches, Schools and Clubs' Goals:
+As a coach, representative of a hurling club, or school, my goal is to efficiently source bulk quantities of equipment to outfit my team for training and competition. I require a reliable supplier like AshClash that offers high-quality gear at competitive prices, with options for customization to suit the needs of my players. Additionally, I seek access to educational resources and community support to enhance my coaching and teaching effectiveness and foster a strong team dynamic.
 
 ## User stories
 ## As Admin
@@ -146,7 +146,7 @@ As a coach or representative of a hurling club, my goal is to efficiently source
 
 ## Color palette
 
-The color palette of AshClash is a homage to the dynamic environment of the hurling field. It draws inspiration from the natural elements that define the sport's essence. Emerald Green embodies the vitality and energy found in the lush grassy fields where hurling matches unfold, while Slate Blue reflects the clear skies above, instilling a sense of focus and determination. Accentuating the palette is Crimson Red, symbolizing the passion and intensity that drive players to excel. Together, these colors evoke the spirit of hurling – resilient, dynamic, and full of heart.
+The color palette of AshClash is carefully curated to reflect the vibrant essence of the hurling field, drawing inspiration from the natural elements that characterize this dynamic sport. Emerald Green symbolizes the vitality and energy of the lush grassy fields where hurling matches take place. The gold and black, representing my county and favorite team kilkenny, which holds personal significance and embody the sport's pinnacle of excellence. White is used to offset the black, creating a balanced and visually appealing contrast. Together, these colors encapsulate the resilient, dynamic, and spirited nature of hurling, aligning perfectly with the AshClash brand.
 ![Coolors Pallete](documentation/diagrams/colorpalettelooka.jpg)
 
 
@@ -159,41 +159,45 @@ The typography of AshClash is carefully selected to complement the energetic and
 
 - The logo was created using an online logo creator - [Looka](https://looka.com/)
 
-![Logo](/documentation/tutorsightlogo.jpg)
+![Logo](/documentation/logo.jpg)
 
 - The Favicon was created using an online Favicon creator - [Favicon](https://favicon.io/)
 
-![Favicon](/documentation/tutorsightowl.jpg)
+![Favicon](/documentation/favicon-32x32.png)
 
 ## Wireframes
 
 - Homepage Wireframe
 
-![Homepage Wireframe](documentation/wireframes/basichomepagewireframe.jpg)
+![Homepage Wireframe](documentation/design/wireframes/homepage-wireframe.jpg)
 
-- Create Booking Wireframe
+- Promotions Wireframe
 
-![Create Booking Wireframe](documentation/wireframes/basiccreatebookingwireframe.jpg)
+![Promotions Wireframe](documentation/design/wireframes/promotions-wireframe.jpg)
 
-- Edit Booking Wireframe
+- Edit Promotions Wireframe
 
-![Edit Booking Wireframe](documentation/wireframes/basiceditbookingwireframe.jpg)
+![Edit Promotions Wireframe](documentation/design/wireframes/edit-promotions-wireframe.jpg)
 
-- Delete Booking Wireframe
+- Reviews Wireframe
 
-![Delete Booking Wireframe](documentation/wireframes/basicdeletebookingwireframe.jpg)
+![Reviews Wireframe](documentation/design/wireframes/reviews-wireframe.jpg)
+
+- Edit Reviews Wireframe
+
+![Edit Reviews Wireframe](documentation/design/wireframes/edit-reviews-wireframe.jpg)
 
 ## Flow Diagram
 
 Here is a diagram showing the possible flow through the site. There are 2 sections shown here. On the left it shows the Admin and the right shows a site user.
 
-![Site Flow Diagram](documentation/diagrams/flowchart.jpg)
+![Site Flow Diagram](documentation/design/diagrams/flowchart.jpg)
 
 ## Database Plan
 
 The database plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
 
-![Database plan](documentation/diagrams/erd-drawsql-dataflow.jpg)
+![Database plan](documentation/design/diagrams/ashclash_erd.jpg)
 
 # Features
 
@@ -207,29 +211,27 @@ The user can logout of an account
 
 ![Account Logout](documentation/logoutaccount.jpg)
 
-## Session booking
+## Promotions
 
-The user can book a session with any tutor
+The admin can create a promotion of a product
 
-![Book a session](documentation/createbooking.jpg)
+![Create promotion](documentation/create-promotion.jpg)
 
-The tutor can accept or deny a booked session with a student.
+The admin can edit a promotion.
 
-![Session is under review](documentation/createbooking.jpg)
+![Edit a promotion](documentation/edit-promotion.jpg)
 
-The user can edit previously booked session with tutor.
+The admin can delete a promotion.
 
-![Edit a session](documentation/editbooking.jpg)
-
-The user can delete a previously booked session with tutor
-
-![Delete a booking](documentation/deletebooking.jpg)
+![Delete a promotion](documentation/delete-promotion.jpg)
 
 ## Features not implemented
 
-Comments and reviews have been removed due to lack of time.
+Comments and likes have been removed due to lack of time.
 
 ## Future Features
+
+
 
 ### Models
 
@@ -256,14 +258,10 @@ I created a number of models for my project. I used allauth's models for authent
 |         | title           | CharField     | Unique                       |
 |         | slug            | SlugField     | Unique                       |
 |         | content         | TextField     |                              |
-|         | excerpt         | TextField     |                              |
-| **M2M** | tags            | ManyToMany    | M2M to **Tag** model         |
 | **M2M** | category        | ManyToMany    | M2M to **Category** model    |
-| **M2M** | favourited      | ManyToMany    | M2M to **UserProfile** model |
 |         | featured_image  | ImageField    |                              |
 |         | created_on      | DateTimeField |                              |
 |         | updated_on      | DateTimeField |                              |
-|         | status          | IntegerField  |                              |
 
 #### Category
 
@@ -397,7 +395,7 @@ The site also has a Mailchimp newsletter signup form, which can be used to colle
 
 The site also has a Facebook business page, which can be used to post content for customers to see, as well as engage with customers through comments and messages. You can [click here to see the AshClash Facebook Page](https://www.facebook.com/profile.php?id=61561113772755). Here is a screenshot of the Facebook Business Page:
 
-![Facebook Business Page](./documentation/facebookcover.png)
+![Facebook Business Page](./documentation/facebookcover.jpg)
 
 #### Keywords
 
@@ -627,12 +625,16 @@ ___
 
 ## Acknowledgments and Thanks
 
-For inpiration in general, for code, design help and advice, I'd like to give thanks to;
+I would like to express my deepest gratitude to the following individuals and groups who have been instrumental in the successful completion of this project:
 
-Patricia Young my mother who has been encouraging and patient with me throughout the project.
+Patricia Young - my mother, for her unwavering encouragement and patience throughout this journey.
 
-Jubril my mentor at Code Institute who was very patient and generous with his time.
+My friends and family members - For their invaluable help with testing and support: Serena, Nicola, Ross, Helen, Conor, Paddy and my niece Ava.
 
-Kyle Clow and Stephen Dawson new friends and recent hackathon partners who have helped me throughout my project with encouragement and patience. I can not thank them enough.
+Jubril - my mentor at Code Institute, for his patience and generosity with his time and knowledge.
 
-Other Slack members and the code institute tutoring service were also helpful throughout the project.
+Kyle Clow and Stephen Dawson - New friends and recent hackathon partners. Their encouragement and patience were crucial. A special thanks to Stephen, whose inspiration and generous guidance made a significant difference. Without his help, I would have felt lost.
+
+Other Slack members and the Code Institute Tutoring service - For their helpful insights and support throughout the project.
+
+Thank you all for your contributions and support.
