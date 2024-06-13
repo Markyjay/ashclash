@@ -111,6 +111,15 @@ h2.logo-font {
     border-color: #555;
 }
 
+/* Admin action buttons */
+.admin-actions {
+    margin-top: 10px;
+}
+
+.admin-actions .btn {
+    margin-right: 5px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .col-md-4, .col-md-8 {

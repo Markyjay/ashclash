@@ -103,27 +103,30 @@ As a coach or representative of a hurling club, my goal is to efficiently source
 
 ## User stories
 ## As Admin
-### Managing Player Profiles:
-  * As an admin, I want to be able to view a list of all player profiles registered on the AshClash platform.
-  * As an admin, I want to be able to add new player profiles, including details such as name, age, position, skill level, and contact information.
-  * As an admin, I want to be able to edit existing player profiles to update information as needed.
-  * As an admin, I want to be able to delete player profiles that are no longer active or relevant.
-### Managing Equipment Listings:
-  * As an admin, I want to be able to view a list of all equipment listings available for purchase on the AshClash website.
-  * As an admin, I want to be able to add new equipment listings, including details such as name, description, category, price, and availability.
-  * As an admin, I want to be able to edit existing equipment listings to update information or adjust availability status.
-  * As an admin, I want to be able to delete equipment listings that are no longer in stock or offered for sale.
-### Creating Equipment Recommendations:
-  * As an admin, I want to be able to create blog posts and recommendations for popular equipment sold on AshClash.
-  * As an admin, I want to be able to add new equipment recommendations, including details such as title, content, author, and associated equipment.
-  * As an admin, I want to be able to edit existing equipment recommendations to update content or revise recommendations.
-  * As an admin, I want to be able to delete equipment recommendations that are outdated or no longer relevant.
+### User Account Management:
+  * As an admin, I want to monitor user profiles and remove inactive or unused profiles to maintain an up-to-date and accurate user database.
+### Managing Product Listings:
+  * As an admin, I want to be able to create new products to offer more choices to customers.
+  * As an admin, I want to be able to update product details to ensure all information about the products is current and accurate.
+  * As an admin, I want to be able to delete products to remove items that are no longer available or relevant.
+### Managing Promotions:
+  * As an admin, I want to be able to view a list of all promotional players on the AshClash platform to efficiently manage and monitor the player details.
+  * As an admin, I want to be able to add new promotional player profiles, including details such as name, age, medal count, and promotion paragraph to keep the player database current and complete.
+  * As an admin, I want to be able to edit existing player profiles to update information as needed to ensure accuracy and relevance of the data.
+  * As an admin, I want to be able to delete player profiles that are no longer active or relevant to maintain a clean and updated player database.
+### Managing Reviews:
+  * As an admin, I want to be able to monitor reviews left by customer to keep consider advice given by my consumers.
+  * As an admin, I want to be able to delete reviews to keep them relevent and clean.
 
 ## As a site user
 ### User Account Management:
   * As a site user, I can create or edit my account to update my details as needed.
 ### Order Management:
   * As a site user, I can log in to view my order history.
+  * As a site user, I can log out of my account to ensure my account is secure when I'm not using it.
+### Profile Management:
+  * As a site user, I can access and view my user profile to see my personal information, order history, and manage my account settings. 
+  * As a site user, I can edit and delete my account to change or remove my personal data from the platform.
 ### Product Discovery:
   * As a site user, I can search for products and browse through them to find specific items I'm interested in purchasing.
   * As a site user, I can sort products by criteria such as price and category to easily find what I'm looking for.
@@ -133,11 +136,11 @@ As a coach or representative of a hurling club, my goal is to efficiently source
   * As a site user, I can update my basket by adding or removing products as needed.
 ### Checkout Process:
   * As a site user, I can view my order summary and securely checkout to confirm my purchase.
-### Engagement:
-  * As a site user, I can comment on blog posts to share my opinions.
-  * As a site user, I can use the contact form to communicate with the site owners.
-### Recommendations:
-  * As a site user, I want to easily view recommendations provided by the admin.
+### Review Structure:
+  * As a site user, I can create a review on purchases i have made to help other cunsumers make more informed decisions.
+  * As a site user, I can update my reviews to modify my feedback if my opinion changes.
+  * As a site user, I can delete my reviews to cremove my feedback if I no longer wish it to be displayed.
+
 
 # Design Choices
 

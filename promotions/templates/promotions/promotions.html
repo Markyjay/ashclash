@@ -56,6 +56,12 @@
                         <img class="card-img-top img-fluid custom-img-size" src="https://res.cloudinary.com/dywqmlkp8/image/upload/v1715808884/AshClash%20Images/logo/logo_pl37is.jpg" alt="{{ player.product.name }}">
                         {% endif %}
                     </a>
+                    {% if request.user.is_authenticated and request.user.is_staff %}
+                    <div class="admin-actions mt-3">
+                        <a href="{% url 'edit_promotion' player.id %}" class="btn btn-outline-black">Edit</a>
+                        <a href="{% url 'delete_promotion' player.id %}" class="btn btn-outline-black">Delete</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

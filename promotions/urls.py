@@ -1,8 +1,10 @@
 from django.urls import path
 from products.views import product_detail
-from .views import promotional_page
+from .views import promotional_page, edit_promotion, delete_promotion
 
 urlpatterns = [
     path('promotions/', promotional_page, name='promotional_page'),
     path('products/<int:product_id>/', product_detail, name='product_detail'),
+    path('promotions/edit/<int:pk>/', edit_promotion, name='edit_promotion'),
+    path('promotions/delete/<int:pk>/', delete_promotion, name='delete_promotion'),
 ]
