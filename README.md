@@ -387,12 +387,14 @@ AshClash aims to become the go-to destination for hurling enthusiasts by offerin
 
 #### Marketing
 
+- Newsletter
 The site has a number of features to help with SEO and marketing. The site has a promotions page, which allows famous hurling players to promote their favourite gear on the site that will help with SEO. You can [click here to access the promotions page](https://ashclash-pp5-8ef04402753f.herokuapp.com/promotions/promotions/). The promotion posts can be shared on social media to drive traffic to the site.
 
 The site also has a Mailchimp newsletter signup form, which can be used to collect emails for marketing purposes. Newsletter form:
 
 ![newsletter form](./documentation/features/newsletter-signup-form.png).
 
+- Facebook page
 The site also has a Facebook business page, which can be used to post content for customers to see, as well as engage with customers through comments and messages. You can [click here to see the AshClash Facebook Page](https://www.facebook.com/profile.php?id=61561113772755). Here is a screenshot of the Facebook Business Page:
 
 ![Facebook Business Page](./documentation/facebookcover.jpg)
@@ -450,7 +452,8 @@ Disallow: /admin/
 Disallow: /login/
 Disallow: /user-profile/
 Disallow: /checkout/
-Disallow: /cart/
+Disallow: /basket/
+Disallow: /promotions/
 
 User-agent: Googlebot
 Allow: /
@@ -497,16 +500,19 @@ As each section or Function/Model was built during this project, I was testing f
 ADMIN
 | TEST | OUTCOME | PASS/FAIL|
 |:---:|:---:|:---:|
-| Create a Booking | Book a session successfully | PASS |
-| Edit a previous booking | Only able to implement edit directly after its creation | PASS |
-| Confirm a booking | Did not have enough time to implement this | FAIL |
-| Delete Booking | Booking deletes successfully | PASS |
-| Write a comment | Could manually enter comments using admin | PASS |
-| Delete User Comments | Could manually delete comments using admin | PASS |
-| Delete Review | Could manually delete reviews using admin | PASS |
-| Create 7 Test Posts to check Pagination | Next/Previous Page Appears at bottom of screen | PASS |
+| Add a product | Add a product successfully | FAIL |
+| Edit a product | Edit an existing product successfully | FAIL |
+| Delete a product | Delete an existing product successfully | FAIL |
+| Create a promotion | Create a promotion successfully | PASS |
+| Edit a promotion | Edit a promotion successfully | PASS |
+| Delete a promotion | Delete a promotion successfully | FAIL |
+| Create a review | Create a review successfully | PASS |
+| Edit a review | Edit a review successfully | PASS |
+| Delete a review | Delete a review successfully | PASS |
 
-(*) - Due to securing a new position in November my time that I could allocate to this project diminished significantly and I got stuck at many points along the way, It was only in the last few weeks that I was starting to understand python and had very little if any experience with bootstrap. Implementing models connecting views and urls properly was very difficult when creating a new type of model from what was shown in the walkthrough, I made things very difficult for myself unintentionally. If i could go back I would certainly prepare better and with the knowledge I have now I could create a much better project. I know myself this is a substandard attempt I only wish you see the effort I made and I hope it merits a pass. 
+(*) - Securing a new position in November significantly reduced the time I could dedicate to this project, leading to numerous challenges along the way. Initially, I struggled with understanding Python and had minimal experience with Bootstrap. Connecting models, views, and URLs, especially when creating a new type of model beyond what was demonstrated in the walkthrough, proved to be particularly difficult.
+In hindsight, I recognize that better preparation could have greatly improved my approach and outcomes. With the knowledge and experience I have gained, I am confident I could now create a much more polished and effective project.
+While I acknowledge that this attempt may not meet the highest standards, I hope that the effort and determination I put into this project are evident and merit a passing evaluation. 
 
 ## User
 
@@ -515,16 +521,10 @@ ADMIN
 | Create Account | Created successfully | Pass |
 | Login | Login Successful | PASS |
 | Logout | Logout Successful | PASS |
-| Create a Booking | Book a session successfully | PASS |
-| Edit a previous booking | Only directly after creation | PASS |
-| Confirm a booking | Did not have enough time to implement this | FAIL |
-| Delete Booking | Booking deletes successfully | Pass |
-| Write a comment | Ran out of time to implement this feature | FAIL |
-| Delete User Comments | Ran out of time to implement this feature | FAIL |
-| Delete Review | Ran out of time to implement this feature | FAIL |
-| Filter Posts by category | Ran out of time to implement this feature | FAIL |
+| Create a review | Create a review successfully | PASS |
+| Edit a review | Edit a review successfully | PASS |
+| Delete a review | Delete a review successfully | PASS |
 
-(*) See Bugs below
 
 ## Bugs
 
