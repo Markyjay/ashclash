@@ -1,11 +1,16 @@
 /* General container styling */
 .container {
-    padding: 20px;
+    padding: 50px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Header styling */
+.col {
+    background-color: #f4b300;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
 h2.logo-font {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;

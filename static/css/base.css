@@ -28,7 +28,7 @@ body {
 }
 
 .shop-now-button {
-  background: #000;
+  background: #000000;
   color: #f4b300; 
   border: none;
   min-width: 260px;
@@ -260,11 +260,76 @@ input[name="q"]::placeholder {
   border-radius: 0;
 }
 
+/* Newsletter */
+#newsletter_shell {
+  width: 100%;
+  background-color: #f4b300;
+  padding: 1.6rem 0; /* Reduce padding by 20% */
+}
+
 #newsletter_signup {
-  background:#fff;  
-  clear:left; 
-  font:14px Helvetica,Arial,sans-serif; 
-  width: 600px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0.8rem; /* Reduce padding by 20% */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#newsletter_signup h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #555;
+  text-align: center;
+  margin-bottom: 0.8rem; /* Reduce margin by 20% */
+  font-size: 1.4rem; /* Optional: Reduce font-size slightly if needed */
+}
+
+#newsletter_signup .indicates-required {
+  font-size: 0.72rem; /* Reduce font-size by 20% */
+  color: #dc3545; /* Red color for required indication */
+  text-align: center;
+}
+
+#newsletter_signup .mc-field-group label {
+  font-family: 'Lato', sans-serif;
+  color: #555;
+  font-size: 0.8rem; /* Reduce font-size by 20% */
+  margin-bottom: 0.8rem; /* Reduce margin by 20% */
+}
+
+#newsletter_signup .mc-field-group .input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#newsletter_signup .mc-field-group .input-wrapper input[type="email"] {
+  flex: 1;
+  padding: 0.6rem; /* Reduce padding by 20% */
+  font-size: 0.8rem; /* Reduce font-size by 20% */
+  border: 1px solid #ced4da;
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 10px; /* Add margin to separate from button */
+}
+
+#newsletter_signup .mc-field-group .input-wrapper .button {
+  background-color: #f4b300;
+  color: #fff;
+  border: 1px solid #f4b300;
+  border-radius: 4px; /* Rounded corners */
+  padding: 0.6rem 1.2rem; /* Reduce padding by 20% */
+  font-size: 0.8rem; /* Reduce font-size by 20% */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#newsletter_signup .mc-field-group .input-wrapper .button:hover {
+  background-color: #218838; 
+}
+
+#newsletter_signup .clear {
+  text-align: center;
 }
 
 /* fixed top navbar only on medium and up */
@@ -279,6 +344,10 @@ input[name="q"]::placeholder {
 
   .header-container {
     padding-top: 164px;
+  }
+
+  #newsletter_signup {
+    padding: 2rem;
   }
 }
 
@@ -327,6 +396,14 @@ input[name="q"]::placeholder {
   .increment-qty,
   .decrement-qty {
     padding: 0.25rem 0.5rem !important;
+  }
+
+  #newsletter_signup {
+    padding: 0.5rem;
+  }
+
+  #newsletter_signup h2 {
+    font-size: 1.5rem;
   }
 }
 
