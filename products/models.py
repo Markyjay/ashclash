@@ -32,7 +32,7 @@ class Product(models.Model):
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = CloudinaryField('image', blank=True, null=True)
-    age_group = models.CharField(max_length=5, choices=AGE_GROUP_CHOICES, default='adult')
+    age_group = models.CharField(max_length=50, choices=AGE_GROUP_CHOICES, default='adult')
     safety_certification = models.BooleanField(default=False)
     availability = models.BooleanField(default=True)
 
