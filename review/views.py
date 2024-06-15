@@ -20,7 +20,12 @@ def list_reviews(request):
     return render(request, 'review/reviews.html', context)
 
 def create_review(request, product_id):
-    """View to create a review."""
+    """
+    View to create a review on a product page. The
+    review is created using the form data and saved
+    to the database. It can only be created by a user
+    who is logged in and has purchased the product.
+    """
     product = get_object_or_404(Product, id=product_id)
     if not OrderLineItem.objects.filter(order__user_profile=request.user.userprofile, product=product).exists():
         messages.error(request, "You must have purchased this product to review it.")
@@ -64,7 +69,10 @@ def edit_review(request, review_id):
 
 @login_required
 def delete_review(request, review_id):
-    """View to delete a review."""
+    """
+    View to delete a review. The review is retrieved
+    from the database and then deleted.
+    """
     review = get_object_or_404(Review, id=review_id)
     if review.user != request.user:
         raise PermissionDenied("You can only delete your own reviews.")
