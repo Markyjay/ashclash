@@ -91,6 +91,12 @@ body {
   background-color: rgba(255, 215, 0, 0.8);
 }
 
+.contrast {
+  background-color: #ffc107 !important;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
 a.category-badge > span.badge:hover {
   background: #212529 !important;
   color: #fff !important;
