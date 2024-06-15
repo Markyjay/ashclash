@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Delete Review{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'review/css/review.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-center min-vh-100">
+  <section class="container py-5">
+    <h1 class="h1">Delete Review</h1>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <p>Are you sure you want to delete your review titled "{{ review.title }}"?</p>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="text-right">
+            <a class="btn btn-dark" href="{% url 'product_detail' review.product.id %}">Cancel</a>
+            <button class="btn btn-danger" type="submit">Delete Review</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

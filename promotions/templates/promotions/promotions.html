@@ -59,14 +59,21 @@
                     </a>
                     {% if request.user.is_superuser %}
                     <div class="admin-actions mt-3">
-                        <a href="{% url 'edit_promotion' player.id %}" class="btn btn-outline-black">Edit</a>
-                        <a href="{% url 'delete_promotion' player.id %}" class="btn btn-outline-black">Delete</a>
+                        <a href="{% url 'edit_promotion' player.pk %}" class="btn btn-outline-black">Edit</a>
+                        <a href="{% url 'delete_promotion' player.pk %}" class="btn btn-outline-black">Delete</a>
                     </div>
                     {% endif %}
                 </div>
             </div>
         </div>
         {% endfor %}
+        {% if request.user.is_superuser %}
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'create_promotion' %}" class="btn btn-black">Create New Promotion</a>
+            </div>
+        </div>
+        {% endif %}
     </div>
 {% endblock %}
 

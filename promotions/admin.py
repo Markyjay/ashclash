@@ -16,4 +16,3 @@ class PromotionalPlayerAdmin(admin.ModelAdmin):
 
 admin.site.register(PromotionalPlayer, PromotionalPlayerAdmin)
 
-
