@@ -18,11 +18,28 @@ Link to live site - [AshClash Website](https://ashclash-pp5-8ef04402753f.herokua
   - [Site Objectives](#site-objectives)
 - [User Experience/UX](#user-experienceux)
   - [Target Audience](#target-audience)
-  - [User Stories](#user-stories)
+  - [User Goals](#user-goals)
     - [New Visitor Goals](#new-visitor-goals)
     - [Existing Visitor Goals](#existing-visitor-goals)
+    - [Hurling Enthusiasts' Goals](#hurling-enthusiast-goals)
+    - [Parents & Guardians' Goals](#parent-guardian-goals)
+    - [Coaches, Schools & Clubs' Goals](#coach-school-club-goals)
+  - [User stories](#user-stories)
+    - [As Admin](#as-admin)
+      - [User Account Management](#user-account-management)
+      - [Managing Product Listings](#managing-product-listings)
+      - [Managing Promotions](#managing-promotions)
+      - [Managing Reviews](#managing-reviews)
+    - [As a Site User](#as-admin)
+      - [User Account](#user-account)
+      - [Product Order Management](#product-order-management)
+      - [Profile Management](#profile-management)
+      - [Product Discovery](#product-discovery)
+      - [Product Interaction](#product-interaction)
+      - [Checkout Process](#checkout-process)
+      - [Review Structure](#review-structure) 
 - [Design Choices](#design-choices)
-  - [Colour Scheme](#colour-scheme)
+  - [Colour Palette](#colour-palette)
   - [Typography](#typography)
   - [Logo and Favicon](#logo-and-favicon)
   - [Wireframes](#wireframes)
@@ -30,28 +47,37 @@ Link to live site - [AshClash Website](https://ashclash-pp5-8ef04402753f.herokua
   - [Database Plan](#database-plan)
 - [Features](#features)
   - [Registration](#registration)
+  - [Product Safety Feature](#product-safety-feature)
+  - [Promotions Feature](#promotions-feature)
+  - [Reviews Feature](#reviews-feature)
   - [Future Features](#future-features)
-  - [Features Not Included](#features-not-included)
+- [Models](#models)
+  - [UserProfile ERD](#userprofile-erd)
+  - [Promotions ERD](#promotions-erd)
+  - [Category ERD](#category-erd)
+  - [Order ERD](#order-erd)
+  - [OrderLineItem ERD](#orderlineitem-erd)
+  - [Product ERD](#product-erd)
+  - [Review ERD](#review-erd)
+- [Business Model](#business-model)
+  - [Search Engine Optimisation (SEO) and Marketing](#search-engine-optimisation-and-marketing) 
+  - [Marketing](#marketing)
+  - [Keywords](#keywords)
+  - [Sitemap](#sitemap)
+  - [Robots.txt](#robots)
 - [Technologies Used](#technologies-used)
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
 - [Agile](#agile)
 - [Testing](#testing)
-  - [Manual Testing](#manual-testing)
-  - [User](#user)
-  - [Bugs](#bugs)
-  - [Lighthouse](#lighthouse)
-  - [Validation Testing](#validation-testing)
-    - [HTML \& CSS](#html--css)
-  - [Python Testing](#python-testing)
-  - [Deployment](#deployment)
-    - [Github Deployment](#github-deployment)
-    - [Creating a Fork or Copying](#creating-a-fork-or-copying)
-    - [Clone](#clone)
-    - [Repository deployment via Heroku](#repository-deployment-via-heroku)
-    - [Deployment of the app](#deployment-of-the-app)
-  - [Credits](#credits)
-  - [Media](#media)
-  - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
+- [Deployment](#deployment)
+  - [Github Deployment](#github-deployment)
+  - [Creating a Fork or Copying](#creating-a-fork-or-copying)
+  - [Clone](#clone)
+  - [Repository deployment via Heroku](#repository-deployment-via-heroku)
+  - [Deployment of the app](#deployment-of-the-app)
+- [Credits](#credits)
+- [Media](#media)
+- [Acknowledgments and Thanks](#acknowledgments-and-thanks)
 
 ___
 
@@ -98,7 +124,7 @@ As a passionate hurling enthusiast, my goal is to access top-quality equipment t
 ### Parents & Guardians' Goals:
 As a parent or guardian interested in introducing my child to hurling, my goal is to find suitable equipment that prioritizes safety and ease of use. I rely on AshClash to provide me with high-quality helmets, hurls, and sliotars specifically designed for young players. I also appreciate resources and recommendations for nurturing my child's interest in hurling and ensuring a positive and enjoyable experience for them.
 
-### Coaches, Schools and Clubs' Goals:
+### Coaches, Schools & Clubs' Goals:
 As a coach, representative of a hurling club, or school, my goal is to efficiently source bulk quantities of equipment to outfit my team for training and competition. I require a reliable supplier like AshClash that offers high-quality gear at competitive prices, with options for customization to suit the needs of my players. Additionally, I seek access to educational resources and community support to enhance my coaching and teaching effectiveness and foster a strong team dynamic.
 
 ## User stories
@@ -119,9 +145,9 @@ As a coach, representative of a hurling club, or school, my goal is to efficient
   * As an admin, I want to be able to delete reviews to keep them relevent and clean.
 
 ## As a site user
-### User Account Management:
+### User Account:
   * As a site user, I can create or edit my account to update my details as needed.
-### Order Management:
+### Product Order Management:
   * As a site user, I can log in to view my order history.
   * As a site user, I can log out of my account to ensure my account is secure when I'm not using it.
 ### Profile Management:
@@ -144,7 +170,7 @@ As a coach, representative of a hurling club, or school, my goal is to efficient
 
 # Design Choices
 
-## Color palette
+## Color Palette
 
 The color palette of AshClash is carefully curated to reflect the vibrant essence of the hurling field, drawing inspiration from the natural elements that characterize this dynamic sport. Emerald Green symbolizes the vitality and energy of the lush grassy fields where hurling matches take place. The gold and black, representing my county and favorite team kilkenny, which holds personal significance and embody the sport's pinnacle of excellence. White is used to offset the black, creating a balanced and visually appealing contrast. Together, these colors encapsulate the resilient, dynamic, and spirited nature of hurling, aligning perfectly with the AshClash brand.
 ![Coolors Pallete](documentation/diagrams/colorpalettelooka.jpg)
@@ -211,23 +237,39 @@ The user can logout of an account
 
 ![Account Logout](documentation/logoutaccount.jpg)
 
-## Promotions
+## Product Safety Feature
+
+The user see if the product has a safety certificate.
+
+![Safety Certification Approved](documentation/createaccount.jpg)
+
+## Promotions Feature
 
 The admin can create a promotion of a product
 
-![Create promotion](documentation/create-promotion.jpg)
+![Create Promotion](documentation/create-promotion.jpg)
 
 The admin can edit a promotion.
 
-![Edit a promotion](documentation/edit-promotion.jpg)
+![Edit a Promotion](documentation/edit-promotion.jpg)
 
 The admin can delete a promotion.
 
-![Delete a promotion](documentation/delete-promotion.jpg)
+![Delete a Promotion](documentation/delete-promotion.jpg)
 
-## Features not implemented
+## Reviews Feature
 
-Comments and likes have been removed due to lack of time.
+The User can create a review of a product they purchased
+
+![Create Review](documentation/create-promotion.jpg)
+
+The user can edit a review they previously posted.
+
+![Edit a review](documentation/edit-promotion.jpg)
+
+The user can delete a review they previously posted.
+
+![Delete a Review](documentation/delete-promotion.jpg)
 
 ## Future Features
 
@@ -237,7 +279,7 @@ Comments and likes have been removed due to lack of time.
 
 I created a number of models for my project. I used allauth's models for authentication. Here are the other models and their fields:
 
-#### UserProfile
+#### UserProfile ERD
 
 | **PK** | **id** (unique)         | Type         | Notes                |
 | ------ | ----------------------- | ------------ | -------------------- |
@@ -250,7 +292,7 @@ I created a number of models for my project. I used allauth's models for authent
 |        | default_postcode        | CharField    |                      |
 |        | default_country         | CountryField |                      |
 
-#### Promotions
+#### Promotions ERD
 
 | **PK**  | **id** (unique) | Type          | Notes                        |
 | ------- | --------------- | ------------- | ---------------------------- |
@@ -263,14 +305,14 @@ I created a number of models for my project. I used allauth's models for authent
 |         | created_on      | DateTimeField |                              |
 |         | updated_on      | DateTimeField |                              |
 
-#### Category
+#### Category ERD
 
 | **PK** | **id** (unique) | Type      | Notes  |
 | ------ | --------------- | --------- | ------ |
 |        | name            | CharField |        |
 |        | slug            | SlugField | Unique |
 
-#### Order
+#### Order ERD
 
 | **PK** | **id** (unique) | Type         | Notes                       |
 | ------ | --------------- | ------------ | --------------------------- |
@@ -293,7 +335,7 @@ I created a number of models for my project. I used allauth's models for authent
 |        | stripe_pid      | CharField    |                             |
 |        | order_note      | TextField    |                             |
 
-#### OrderLineItem
+#### OrderLineItem ERD
 
 | **PK** | **id** (unique) | Type         | Notes                   |
 | ------ | --------------- | ------------ | ----------------------- |
@@ -302,7 +344,7 @@ I created a number of models for my project. I used allauth's models for authent
 |        | quantity        | IntegerField |                         |
 |        | line_item_total | DecimalField |                         |
 
-#### Product
+#### Product ERD
 
 | **PK** | **id** (unique) | Type         | Notes |
 | ------ | --------------- | ------------ | ----- |
@@ -312,7 +354,7 @@ I created a number of models for my project. I used allauth's models for authent
 |        | price           | DecimalField |       |
 |        | image           | ImageField   |       |
 
-#### Review
+#### Review ERD
 
 | **PK** | **id** (unique) | Type       | Notes                   |
 | ------ | --------------- | ---------- | ----------------------- |
@@ -490,83 +532,11 @@ This project was designed using Agile methodology, utilising the Project Board a
 - [Project Board](https://github.com/users/Markyjay/projects/4)
 
 # Testing
+All Testing recorded in TESTING.MD
 
-As each section or Function/Model was built during this project, I was testing for functionality and styling issues that may have arisen (see table below), which were corrected or fixed before continuing. I also had friends test the site by signing up, adding and deleting comments using various devices on varying platforms (IOS, Android, Mobile, Tablet etc) and reporting back any issues they encountered with functionality or styling.
+# Deployment
 
-## Manual Testing
-
-*For any Fails, there is a more detailed description below the table*
-
-ADMIN
-| TEST | OUTCOME | PASS/FAIL|
-|:---:|:---:|:---:|
-| Add a product | Add a product successfully | FAIL |
-| Edit a product | Edit an existing product successfully | FAIL |
-| Delete a product | Delete an existing product successfully | FAIL |
-| Create a promotion | Create a promotion successfully | PASS |
-| Edit a promotion | Edit a promotion successfully | PASS |
-| Delete a promotion | Delete a promotion successfully | FAIL |
-| Create a review | Create a review successfully | PASS |
-| Edit a review | Edit a review successfully | PASS |
-| Delete a review | Delete a review successfully | PASS |
-
-(*) - Securing a new position in November significantly reduced the time I could dedicate to this project, leading to numerous challenges along the way. Initially, I struggled with understanding Python and had minimal experience with Bootstrap. Connecting models, views, and URLs, especially when creating a new type of model beyond what was demonstrated in the walkthrough, proved to be particularly difficult.
-In hindsight, I recognize that better preparation could have greatly improved my approach and outcomes. With the knowledge and experience I have gained, I am confident I could now create a much more polished and effective project.
-While I acknowledge that this attempt may not meet the highest standards, I hope that the effort and determination I put into this project are evident and merit a passing evaluation. 
-
-## User
-
-| TEST | OUTCOME | PASS/FAIL|
-|:---:|:---:|:---:|
-| Create Account | Created successfully | Pass |
-| Login | Login Successful | PASS |
-| Logout | Logout Successful | PASS |
-| Create a review | Create a review successfully | PASS |
-| Edit a review | Edit a review successfully | PASS |
-| Delete a review | Delete a review successfully | PASS |
-
-
-## Bugs
-
-PostgreSQL Version Mismatch Error:
-
-
-
-## Lighthouse
-
-The performance scores appear to be low, and I believe this is due to the images uploaded for each blog post being hosted on a third-party cloud-based platform.
-
-Desktop
-
-![Lighthouse Desktop Score](documentation/testing/lighthousetesting.jpg)
-
-## Validation Testing
-
-### HTML & CSS
-
-HTML & CSS testing was completed using [W3 Validator](https://validator.w3.org/)
-
-![HTML Validation completed](documentation/testing/htmlverification.jpg)
-
-## Python Testing
-
-Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
-
-The only errors recieved here were where some lines of text exceeded the limit of 79 characters, but these have now been rectified.
-![Python Linter test example](documentation/testing/pythonlintertesting.jpg)
-
-Python Files Tested:
-
-- models
-- forms
-- views
-- urls
-
-___
-
-## Deployment
-
-### Github Deployment
+## Github Deployment
 
 The website was stored using GitHub for storage of data and version control. To do this I did the following;
 
@@ -578,7 +548,7 @@ After each addition, change or removal of code, in the terminal within your IDE 
 
 The files are now available to view within your github repository.
 
-### Repository deployment via Heroku
+## Repository deployment via Heroku
 
 - On the [Heroku Dashboard](https://dashboard.heroku.com) page, click New and then select Create New App from the drop-down menu.
 - When the next page loads insert the App name and Choose a region. Then click 'Create app'
@@ -592,7 +562,7 @@ The files are now available to view within your github repository.
 
 - Below this click Add buildpack and choose python and nodejs in that order.
 
-### Deployment of the app
+## Deployment of the app
 
 - Click on the Deploy tab and select Github-Connect to Github.
 - Enter the repository name and click Search.
@@ -601,7 +571,7 @@ The files are now available to view within your github repository.
 - Once the deployment method has been chosen the app will be built and can be launched by clicking the Open app button which should appear below the build information window, alternatively, there is another button located in the top right of the page.
 ___
 
-## Credits
+# Credits
 
 This project was based on the Code Institute's - I think therefore I blog walkthrough module which provided a standard blog 'base'. From this base I customised a lot of the layout and styling with Bootstrap and custom CSS. I also added a custom model for booking a session. This allowed me to create a functionality within the site for users to filter through teachers and their reviews and comments selecting a suitable tutor if needed.
 
@@ -615,7 +585,7 @@ Once complete, the readme file was passed through a spelling and grammar check v
 
 ___
 
-## Media
+# Media
 
 For placeholder images, I have used [picsum](https://picsum.photos/) which provides a library of stock images that display as a placeholder.
 
@@ -623,7 +593,7 @@ All other content and images are my own.
 
 ___
 
-## Acknowledgments and Thanks
+# Acknowledgments and Thanks
 
 I would like to express my deepest gratitude to the following individuals and groups who have been instrumental in the successful completion of this project:
 

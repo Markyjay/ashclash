@@ -41,8 +41,8 @@
                 <a href="{% url 'products' %}?category=torpey" class="dropdown-item">Torpey Hurls</a>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black ml-5" href="#" id="sliotars">
+        <li class="nav-item" aria-labelledby="sliotars">
+            <a class="logo-font font-weight-bold nav-link text-black ml-5" href="{% url 'products' %}?category=sliotars" id="sliotars">
                 Sliotars
             </a>
         </li>
@@ -50,7 +50,7 @@
             <a class="logo-font font-weight-bold nav-link text-black mr-5 ml-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Accessories
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+            <div class="dropdown-menu border-0" aria-labelledby="accessories">
                 <a href="{% url 'products' %}?category=grips" class="dropdown-item">Grips</a>
                 <a href="{% url 'products' %}?category=ash_guards" class="dropdown-item">Ashguards</a>
                 <a href="{% url 'products' %}?category=shin_guards" class="dropdown-item">Shin Guards</a> 
