@@ -6,20 +6,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row mb-4 ml-3">
-        <div class="product col-md-4">
-            <div class="row">
-                <div class="col-md-8 offset-md-2 mt-4">
-                    <h2 class="logo-font mb-4">Create Promotion</h2>
-                        <form method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-success mt-3">Create Promotion</button>
-                        </form>
-                </div>
-            </div>
-        </div>
+<div class="container mt-5">
+    <div class="mt-4 pt-5">
+        <h2 class="logo-font mb-4">Create Promotion</h2>
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success mt-3">Create Promotion</button>
+        </form>
     </div>
 </div>
 {% endblock %}

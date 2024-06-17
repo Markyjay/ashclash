@@ -35,7 +35,7 @@
             {% endif %}
             {% endfor %}
             <div class="text-right">
-              <a class="btn btn-dark" href="{% url 'product_detail' product.id %}">Cancel</a>
+              <a class="btn btn-dark" href="{% url 'product_detail' review.product.id %}">Cancel</a>
               <button class="btn btn-success btn-outline-dark" type="submit">Save Review</button>
             </div>
         </form>
@@ -45,7 +45,7 @@
 </div>
 {% endblock %}
 
-{% block post_load_js %}
+{% block postloadjs %}
 {{ block.super }}
 <script>
   document.addEventListener('DOMContentLoaded', () => {
