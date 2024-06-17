@@ -95,19 +95,23 @@
                                         </div>
                                         <div class="reviews-section mt-5">
                                             <small class="small mt-1 mb-0">Bought this product?</small>
-                                            <a href="{% url 'create_review' product.id %}" class="small mt-1 mb-0">Leave a Review</a>
-                                            {% if product.reviews.exists %}
-                                                <ul class="list-group">
-                                                    {% for review in product.reviews.all %}
-                                                        <li class="list-group-item">
-                                                            <span class="text-muted">- {{ review.rating }} / 5</span>
-                                                            <p>{{ review.content }}</p>
-                                                        </li>
-                                                    {% endfor %}
-                                                </ul>
-                                            {% else %}
-                                                <small>No reviews yet.</small>
-                                            {% endif %}
+                                            <div>
+                                                <a href="{% url 'create_review' product.id %}" class="small btn btn-success mt-1 mb-0">Leave a Review</a>
+                                                {% if product.reviews.exists %}
+                                                    <ul class="list-group">
+                                                        {% for review in product.reviews.all %}
+                                                            <li class="list-group-item">
+                                                                <span class="text-muted">- {{ review.rating }} / 5</span>
+                                                                <p>{{ review.content }}</p>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% else %}
+                                                <div>
+                                                    <small>No reviews yet.</small>
+                                                </div>
+                                                {% endif %}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

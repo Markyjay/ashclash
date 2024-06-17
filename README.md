@@ -99,7 +99,7 @@ ___
 # User Experience/UX
 
 ## Target Audience
-    At AshClash, we cater to a diverse range of demographics united by their passion for hurling. Our focus groups include:
+At AshClash, we cater to a diverse range of demographics united by their passion for hurling. Our focus groups include:
 
 - Hurling Enthusiasts:
      This group comprises individuals of all ages who are deeply passionate about the sport of hurling. They may be active players, coaches, or dedicated fans who follow hurling closely and seek high-quality equipment to enhance their performance and enjoyment of the game.
@@ -217,13 +217,13 @@ The typography of AshClash is carefully selected to complement the energetic and
 
 Here is a diagram showing the possible flow through the site. There are 2 sections shown here. On the left it shows the Admin and the right shows a site user.
 
-![Site Flow Diagram](documentation/design/diagrams/flowchart.jpg)
+![Site Flow Diagram](documentation/design/diagram/flowchart.jpg)
 
 ## Database Plan
 
 The database plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
 
-![Database plan](documentation/design/diagrams/ashclash_erd.jpg)
+![Database plan](documentation/design/diagram/ashclash_erd.jpg)
 
 # Features
 
@@ -231,31 +231,31 @@ The database plan is fairly simple, but it shows the information that is stored 
 
 The user can create an account
 
-![Create an Account](documentation/createaccount.jpg)
+![Create an Account](documentation/features/createaccountfeature.jpg)
 
 The user can logout of an account
 
-![Account Logout](documentation/logoutaccount.jpg)
+![Account Logout](documentation/features/logoutfeature.jpg)
 
 ## Product Safety Feature
 
 The user see if the product has a safety certificate.
 
-![Safety Certification Approved](documentation/createaccount.jpg)
+![Safety Certification Approved]()
 
 ## Promotions Feature
 
 The admin can create a promotion of a product
 
-![Create Promotion](documentation/create-promotion.jpg)
+![Create Promotion](documentation/features/createpromotionsfeature.jpg)
 
 The admin can edit a promotion.
 
-![Edit a Promotion](documentation/edit-promotion.jpg)
+![Edit a Promotion](documentation/features/editpromotionfeature.jpg)
 
 The admin can delete a promotion.
 
-![Delete a Promotion](documentation/delete-promotion.jpg)
+![Delete a Promotion](documentation/features/deletepromotionfeature.jpg)
 
 ## Reviews Feature
 
@@ -270,6 +270,12 @@ The user can edit a review they previously posted.
 The user can delete a review they previously posted.
 
 ![Delete a Review](documentation/delete-promotion.jpg)
+
+## Newsletter Feature
+
+The User have the sites newsletter sent to their email.
+
+![Newsletter](documentation/features/newsletterfeature.jpg)
 
 ## Future Features
 
@@ -432,9 +438,9 @@ AshClash aims to become the go-to destination for hurling enthusiasts by offerin
 - Newsletter
 The site has a number of features to help with SEO and marketing. The site has a promotions page, which allows famous hurling players to promote their favourite gear on the site that will help with SEO. You can [click here to access the promotions page](https://ashclash-pp5-8ef04402753f.herokuapp.com/promotions/promotions/). The promotion posts can be shared on social media to drive traffic to the site.
 
-The site also has a Mailchimp newsletter signup form, which can be used to collect emails for marketing purposes. Newsletter form:
+The site also has a Mailchimp newsletter signup form [Mailchimp](https://mailchimp.com/), which can be used to collect emails for marketing purposes. Newsletter form:
 
-![newsletter form](./documentation/features/newsletter-signup-form.png).
+![newsletter form](./documentation/features/newsletterfeature.jpg).
 
 - Facebook page
 The site also has a Facebook business page, which can be used to post content for customers to see, as well as engage with customers through comments and messages. You can [click here to see the AshClash Facebook Page](https://www.facebook.com/profile.php?id=61561113772755). Here is a screenshot of the Facebook Business Page:
@@ -502,7 +508,6 @@ Allow: /
 
 Sitemap: https://www.ashclash.com/sitemap.xml
 ```
-
 ___
 
 # Technologies Used
@@ -587,9 +592,23 @@ ___
 
 # Media
 
-For placeholder images, I have used [picsum](https://picsum.photos/) which provides a library of stock images that display as a placeholder.
+For placeholder images, I have used from the official sites 
+- [Azzurri](https://azzurri.ie/) 
+- [Atak](https://atak.ie/) 
+- [Cooper](https://cooper.ie/) 
+- [Mycro](https://mycrosport.com/) 
+- [Curran Hurls](https://curranhurling.com/) 
+- [Farrell Hurls](https://www.trinitygaels.ie/) 
+- [Moran Hurls](https://moranhurleys.ie/) 
+- [Maher Homemade Hurls](https://www.maherhandmadehurls.com/) 
+- [Torpey Hurls](https://torpey.ie/) 
+- [O'Meara Sliotars](https://www.omearasliotars.com/) 
+- [Karakal Sliotars](https://karakal.ie/) 
+- [Precision Shin Guards](https://precisiontraining.online/collections/shinguards) 
 
-All other content and images are my own.
+Various other product images and information was taken from these set of sites such as sliotars, grips, gear bags and ash guards.
+
+The main image and the promotion images are all found through google image search.
 
 ___
 
