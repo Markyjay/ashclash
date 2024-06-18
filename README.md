@@ -559,7 +559,7 @@ The files are now available to view within your github repository.
 - When the next page loads insert the App name and Choose a region. Then click 'Create app'
 - In the settings tab click on Reveal Config Vars and add the key Port and the value 8000. The credentials for this app were:
 
-1. Cloudinary URL
+1. Cloudinary URL (AWS would not accept my bank card so had to use cloudinary method from walkthrough p4)
 2. Postgres Database URL
 3. DISABLE_COLLECTSTATIC
 4. Port (8000)
