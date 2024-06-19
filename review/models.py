@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from products.models import Product
 
+
 class Review(models.Model):
     """
     Model for a review on a product. The review is

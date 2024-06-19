@@ -9,4 +9,5 @@ class PromotionalPlayerForm(forms.ModelForm):
         model = PromotionalPlayer
         fields = '__all__'
 
-    image = CloudinaryFileField(required=False, widget=CustomClearableFileInput)
+    image = CloudinaryFileField(required=False,
+                                widget=CustomClearableFileInput)

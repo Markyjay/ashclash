@@ -13,8 +13,6 @@ from products.models import Product
 from profiles.models import UserProfile
 
 
-
-
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 

@@ -19,6 +19,7 @@ def list_reviews(request):
 
     return render(request, 'review/reviews.html', context)
 
+
 def create_review(request, product_id):
     """
     View to create a review on a product page. The
@@ -47,6 +48,7 @@ def create_review(request, product_id):
     }
     return render(request, 'review/create_review.html', context)
 
+
 @login_required
 def edit_review(request, review_id):
     """View to edit a review."""
@@ -66,6 +68,7 @@ def edit_review(request, review_id):
         'review': review,
     }
     return render(request, 'review/edit_review.html', context)
+
 
 @login_required
 def delete_review(request, review_id):

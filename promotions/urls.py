@@ -7,5 +7,6 @@ urlpatterns = [
     path('products/<int:product_id>/', product_detail, name='product_detail'),
     path('promotions/create/', create_promotion, name='create_promotion'),
     path('promotions/edit/<int:pk>/', edit_promotion, name='edit_promotion'),
-    path('promotions/delete/<int:pk>/', delete_promotion, name='delete_promotion'),
+    path('promotions/delete/<int:pk>/',
+         delete_promotion, name='delete_promotion'),
 ]

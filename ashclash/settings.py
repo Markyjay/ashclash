@@ -32,7 +32,8 @@ DEBUG = os.environ.get('DEBUG_MODE')
 
 # 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['ashclash-pp5-8ef04402753f.herokuapp.com', 'localhost', '8000-markyjay-ashclash-jxaef9z52dc.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = ['ashclash-pp5-8ef04402753f.herokuapp.com', 'localhost',
+                 '8000-markyjay-ashclash-jxaef9z52dc.ws-eu114.gitpod.io']
 
 # Application definition
 
@@ -53,7 +54,7 @@ INSTALLED_APPS = [
     'products',
     'basket',
     'checkout',
-    'profiles', 
+    'profiles',
     'crispy_forms',
     'promotions',
     'review',
@@ -140,16 +141,28 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
 
@@ -172,7 +185,9 @@ MEDIA_URL = 'media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = 'static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = (
+    'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+)
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
