@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 from products.models import Product
 
 
@@ -8,6 +8,7 @@ def view_basket(request):
     """ A view that renders the basket contents page """
 
     return render(request, 'basket/basket.html')
+
 
 @login_required
 def add_to_basket(request, item_id):
@@ -42,7 +43,8 @@ def add_to_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(redirect_url)
-            
+
+
 @login_required
 def adjust_basket(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
@@ -74,6 +76,7 @@ def adjust_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(redirect_url)
+
 
 @login_required
 def remove_from_basket(request, item_id):
