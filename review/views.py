@@ -19,7 +19,7 @@ def list_reviews(request):
 
     return render(request, 'review/reviews.html', context)
 
-
+@login_required
 def create_review(request, product_id):
     """
     View to create a review on a product page. The

@@ -78,8 +78,7 @@ I used the [Code Institute PEP8 Validator](https://pep8ci.herokuapp.com/) to che
 | basket/urls.py                | ![basket-urls](documentation/validation/pep8/pep8basketurls.jpg)                               | Pass                                                                                          |
 | checkout/admin.py           | ![checkout-admin](documentation/validation/pep8/pep8checkoutadmin.jpg)                     | Pass                                                                                          |
 | checkout/forms.py           | ![checkout-forms](documentation/validation/pep8/pep8checkoutforms.jpg)                     | Pass                                                                                          |
-| checkout/models.py          | ![checkout-models](documentation/validation/pep8/pep8checkoutmodels.jpg)                   | 52: E501 line too long (102 > 79 characters)
-54: E501 line too long (95 > 79 characters)                                                                                          |
+| checkout/models.py          | ![checkout-models](documentation/validation/pep8/pep8checkoutmodels.jpg)                   | 52: E501 line too long (102 > 79 characters), 54: E501 line too long (95 > 79 characters)                                                                                          |
 | checkout/signals.py         | ![checkout-signals](documentation/validation/pep8/pep8checkoutsignals.jpg)                 | Pass                                                                                          |
 | checkout/urls.py            | ![checkout-urls](documentation/validation/pep8/pep8checkouturls.jpg)                       | Pass                                                                                          |
 | checkout/views.py           | ![checkout-views](documentation/validation/pep8/pep8checkoutviews.jpg)                     | Pass                                                                                          |
@@ -102,7 +101,6 @@ I used the [Code Institute PEP8 Validator](https://pep8ci.herokuapp.com/) to che
 | promotions/views.py               | ![promotions-views](documentation/validation/pep8/pep8promotionsviews.jpg)                             | Pass                                                                                          |
 | home/urls.py                | ![home-urls](documentation/validation/pep8/pep8homeurls.jpg)                               | Pass                                                                                          |
 | home/views.py               | ![home-views](documentation/validation/pep8/pep8homeviews.jpg)                             | Pass                                                                                          |
-
 | review/admin.py             | ![review-admin](documentation/validation/pep8/pep8reviewadmin.jpg)                         | Pass                                                                                          |
 | review/forms.py             | ![review-forms](documentation/validation/pep8/pep8reviewforms.jpg)                         | Pass                                                                                          |
 | review/models.py            | ![review-models](documentation/validation/pep8/pep8reviewmodels.jpg)                       | Pass                                                                                          |
