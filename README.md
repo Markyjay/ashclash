@@ -50,6 +50,8 @@ Link to live site - [AshClash Website](https://ashclash-pp5-8ef04402753f.herokua
   - [Product Safety Feature](#product-safety-feature)
   - [Promotions Feature](#promotions-feature)
   - [Reviews Feature](#reviews-feature)
+  - [Newsletter Feature](#newsletter-feature)
+  - [Features Not Implemented](#features-not-implemented)
   - [Future Features](#future-features)
 - [Models](#models)
   - [UserProfile ERD](#userprofile-erd)
@@ -261,15 +263,15 @@ The admin can delete a promotion.
 
 The User can create a review of a product they purchased
 
-![Create Review](documentation/create-promotion.jpg)
+![Create Review](documentation/features/createreviewfeature.jpg)
 
 The user can edit a review they previously posted.
 
-![Edit a review](documentation/edit-promotion.jpg)
+![Edit a review](documentation/features/editreviewfeature.jpg)
 
 The user can delete a review they previously posted.
 
-![Delete a Review](documentation/delete-promotion.jpg)
+![Delete a Review](documentation/features/editreviewfeature.jpg)
 
 ## Newsletter Feature
 
@@ -277,157 +279,197 @@ The User have the sites newsletter sent to their email.
 
 ![Newsletter](documentation/features/newsletterfeature.jpg)
 
-## Future Features
+## Features Not Implemented
+- Displaying the count of reviews for the product.
+Conditionally showing a message if there are no reviews ("No reviews yet").
+![No Reviews Yet](documentation/features/noreviewyetfeature.jpg)
 
+Reason for not implementing: Time Constraints and Model Setup Complexity
+
+Implementing this feature required altering the database schema by modifying models to establish the relationship, running database migrations to update the schema, ensuring no data is lost or corrupted during this process, updating views to correctly fetch and count reviews this in turn required writing new logic to fetch and count reviews, ensuring this logic integrates seamlessly with existing views and modifying templates to display the review count.
+
+While showing the count of reviews would enhance the user experience, the complexity and time required to implement it correctly and safely are substantial. Given the current project timeline and the potential for introducing instability, it is more prudent to postpone this feature to a future release when there is sufficient time to make these changes carefully and thoroughly.
+
+## Future Features
+- Enhanced Reviews and Ratings:
+  Allow users to upload photos with their reviews.
+  Implement review filtering and sorting options (e.g., by rating, date).
+  Add a feature for users to mark reviews as helpful or report inappropriate reviews.
+
+- Wishlist and Favorites:
+  Allow users to create and manage wishlists.
+  Provide a "favorite" button for easy access to frequently viewed products.
+
+- Personalized User Dashboard:
+  Create a user dashboard where customers can view order history, track shipments, and manage account details.
+  Provide personalized offers and discounts based on purchase history.
+
+- Loyalty Program:
+  Implement a loyalty program to reward repeat customers with points, discounts, or special offers.
+
+- Mobile App:
+  Develop a mobile app for Android and iOS to provide a seamless shopping experience on the go.
+  Implement push notifications for promotions and order updates.
+
+- Blog and Content Marketing:
+  Add a blog section to share articles, product guides, and company news.
+  Integrate with social media platforms for content sharing.
+
+- Enhanced Analytics and Reporting:
+  Implement tools for tracking user behavior, sales trends, and marketing campaign effectiveness.
+  Provide detailed reports for business insights and decision-making.
 
 
 ### Models
 
 I created a number of models for my project. I used allauth's models for authentication. Here are the other models and their fields:
 
-#### UserProfile ERD
+#### UserProfile Class (Profile Model)
 
-| **PK** | **id** (unique)         | Type         | Notes                |
-| ------ | ----------------------- | ------------ | -------------------- |
-| **FK** | user                    | OneToOne     | FK to **User** model |
-|        | default_phone_number    | CharField    |                      |
-|        | default_street_address1 | CharField    |                      |
-|        | default_street_address2 | CharField    |                      |
-|        | default_town_or_city    | CharField    |                      |
-|        | default_county          | CharField    |                      |
-|        | default_postcode        | CharField    |                      |
-|        | default_country         | CountryField |                      |
+| **PK** | **id** (unique)         | Type         | Notes                                          |
+| ------ | ----------------------- | ------------ | ---------------------------------------------- |
+| **FK** | user                    | OneToOne     | FK to **User** model                           |
+|        | default_phone_number    | CharField    | max_length=20, null=True, blank=True           |
+|        | default_street_address1 | CharField    | max_length=80, null=True, blank=True           |
+|        | default_street_address2 | CharField    | max_length=80, null=True, blank=True           |
+|        | default_town_or_city    | CharField    | max_length=40, null=True, blank=True           |
+|        | default_county          | CharField    | max_length=80, null=True, blank=True           |
+|        | default_postcode        | CharField    | max_length=20, null=True, blank=True           |
+|        | default_country         | CountryField | blank_label='Country *', null=True, blank=True |
 
-#### Promotions ERD
+#### Order Class (Checkout Model)
 
-| **PK**  | **id** (unique) | Type          | Notes                        |
-| ------- | --------------- | ------------- | ---------------------------- |
-| **FK**  | author          | ForeignKey    | FK to **UserProfile** model  |
-|         | title           | CharField     | Unique                       |
-|         | slug            | SlugField     | Unique                       |
-|         | content         | TextField     |                              |
-| **M2M** | category        | ManyToMany    | M2M to **Category** model    |
-|         | featured_image  | ImageField    |                              |
-|         | created_on      | DateTimeField |                              |
-|         | updated_on      | DateTimeField |                              |
+| **PK** | **id** (unique) | Type         | Notes                                                                    |
+| ------ | --------------- | ------------ | ------------------------------------------------------------------------ |
+|        | order_number    | CharField    | max_length=32, null=False, editable=False                                |
+| **FK** | user_profile    | ForeignKey   | FK to **UserProfile** model, null=True, blank=True, related_name='orders'|
+|        | first_name      | CharField    | max_length=50, null=False, blank=False                                   |
+|        | email           | EmailField   | max_length=254, null=False, blank=False                                  |
+|        | phone_number    | CharField    | max_length=20, null=False, blank=False                                   |
+|        | country         | CountryField | blank_label='Country *', null=False, blank=False                         |
+|        | postcode        | CharField    | max_length=20, null=True, blank=True                                     |
+|        | town_or_city    | CharField    | max_length=40, null=False, blank=False                                   |
+|        | street_address1 | CharField    | max_length=80, null=False, blank=False                                   |
+|        | street_address2 | CharField    | max_length=80, null=True, blank=True                                     |
+|        | county          | CharField    | max_length=80, null=True, blank=True                                     |
+|        | date            | DateTimeField| auto_now_add=True                                                        |
+|        | delivery_cost   | DecimalField | max_digits=6, decimal_places=2, null=False, default=0                    |
+|        | order_total     | DecimalField | max_digits=10, decimal_places=2, null=False, default=0                   |
+|        | grand_total     | DecimalField | max_digits=10, decimal_places=2, null=False, default=0                   |
+|        | original_basket | TextField    | null=False, blank=False, default=''                                      |
+|        | stripe_pid      | CharField    | max_length=254, null=False, blank=False, default=''                      |
 
-#### Category ERD
+#### OrderLineItem Class (Checkout Model)
 
-| **PK** | **id** (unique) | Type      | Notes  |
-| ------ | --------------- | --------- | ------ |
-|        | name            | CharField |        |
-|        | slug            | SlugField | Unique |
+| **PK** | **id** (unique) | Type         | Notes                                                                      |
+| ------ | --------------- | ------------ | -------------------------------------------------------------------------- |
+| **FK** | order           | ForeignKey   | FK to **Order** model, null=False, blank=False, related_name='lineitems'   |
+| **FK** | product         | ForeignKey   | FK to **Product** model, null=False, blank=False                           |
+|        | product_size    | CharField    | max_length=50, null=True, blank=True                                       |
+|        | quantity        | IntegerField | null=False, blank=False, default=0                                         |
+|        | line_item_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False    |
 
-#### Order ERD
+#### Category Class (Product Model)
 
-| **PK** | **id** (unique) | Type         | Notes                       |
-| ------ | --------------- | ------------ | --------------------------- |
-|        | order_number    | CharField    |                             |
-| **FK** | user_profile    | ForeignKey   | FK to **UserProfile** model |
-|        | first_name      | CharField    |                             |
-|        | last_name       | CharField    |                             |
-|        | email           | EmailField   |                             |
-|        | phone_number    | CharField    |                             |
-|        | country         | CountryField |                             |
-|        | postcode        | CharField    |                             |
-|        | town_or_city    | CharField    |                             |
-|        | street_address1 | CharField    |                             |
-|        | street_address2 | CharField    |                             |
-|        | county          | CharField    |                             |
-|        | shipping_cost   | DecimalField |                             |
-|        | order_subtotal  | DecimalField |                             |
-|        | order_total     | DecimalField |                             |
-|        | original_cart   | TextField    |                             |
-|        | stripe_pid      | CharField    |                             |
-|        | order_note      | TextField    |                             |
+| **PK** | **id** (unique) | Type      | Notes                                 |
+| ------ | --------------- | --------- | ------------------------------------- |
+|        | name            | CharField | max_length=254                        |
+|        | friendly_name   | CharField | max_length=254, null=True, blank=True |
 
-#### OrderLineItem ERD
+#### Product Class (Product Model)
 
-| **PK** | **id** (unique) | Type         | Notes                   |
-| ------ | --------------- | ------------ | ----------------------- |
-| **FK** | order           | ForeignKey   | FK to **Order** model   |
-| **FK** | product         | ForeignKey   | FK to **Product** model |
-|        | quantity        | IntegerField |                         |
-|        | line_item_total | DecimalField |                         |
+| **PK** | **id** (unique)     | Type           | Notes                                                                           |
+| ------ | ------------------- | -------------- | ------------------------------------------------------------------------------- |
+| **FK** | category            | ForeignKey     | FK to **Category** model, null=True, blank=True, on_delete=models.SET_NULL      |
+|        | sku                 | CharField      | max_length=254, null=True, blank=True                                           |
+|        | name                | CharField      | max_length=254                                                                  |
+|        | description         | TextField      |                                                                                 |
+|        | has_sizes           | BooleanField   | default=False, null=True, blank=True                                            |
+|        | price               | DecimalField   | max_digits=6, decimal_places=2                                                  |
+|        | image_url           | URLField       | max_length=1024, null=True, blank=True                                          |
+|        | image               | CloudinaryField| blank=True, null=True                                                           |
+|        | age_group           | CharField      | max_length=50, choices=AGE_GROUP_CHOICES, default='adult'                       |
+|        | safety_certification| BooleanField   | default=False                       |
+|        | availability        | BooleanField   | default=False                       |
 
-#### Product ERD
+#### PromotionalPlayer Class (Promotions Model)
 
-| **PK** | **id** (unique) | Type         | Notes |
-| ------ | --------------- | ------------ | ----- |
-|        | sku             | CharField    |       |
-|        | name            | CharField    |       |
-|        | description     | TextField    |       |
-|        | price           | DecimalField |       |
-|        | image           | ImageField   |       |
+| **PK**  | **id** (unique)    | Type           | Notes                                                    |
+| ------- | ------------------ | -------------- | -------------------------------------------------------- |
+| **FK**  | product            | ForeignKey     | Product, null=True, blank=True, on_delete=models.CASCADE |
+|         | image              | CloudinaryField| 'image', blank=True, null=True                           |
+|         | image_url          | URLField       | max_length=1024, null=True, blank=True                   |
+|         | name               | CharField      | max_length=100                                           |
+|         | age                | IntegerField   |                                                          |
+|         | team               | CharField      | max_length=100                                           |
+|         | medals             | TextField      |                                                          |
+|         | product_to_promote | CharField      | max_length=100                                           |
+|         | promotion_paragraph| TextField      |                                                          |
 
-#### Review ERD
+#### Review Class (Review Model)
 
-| **PK** | **id** (unique) | Type       | Notes                   |
-| ------ | --------------- | ---------- | ----------------------- |
-| **FK** | product         | ForeignKey | FK to **Product** model |
-| **FK** | user            | ForeignKey | FK to **User** model    |
-|        | title           | CharField  |                         |
+| **PK** | **id** (unique) | Type          | Notes                                                                      |
+| ------ | --------------- | ------------- | -------------------------------------------------------------------------- |
+|        | user            | ForeignKey    | User, on_delete=models.CASCADE                                             |
+| **FK** | product         | ForeignKey    | FK to **Product** model, null=False, blank=False, on_delete=models.CASCADE |
+|        | title           | CharField     | max_length=200                                                             |
+|        | text            | TextField     | max_length=400                                                             |
+|        | rating          | IntegerField  |                                                                            |
+|        | created_at      | DateTimeField | auto_now_add=True                                                          |
+|        | updated_at      | DateTimeField | auto_now=True                                                              |
 
 ## Business Model
 
 AshClash is dedicated to providing high-quality, specialized hurling equipment and accessories. Our product range includes hurls, helmets, sliotars, and various other accessories tailored to meet the unique needs of hurling players. We focus on quality, safety, and performance to ensure our customers receive the best gear available.
 
-Customers:
+- Customers:
+  Individual Players: Amateur and professional hurling players seeking reliable and durable equipment.
+  Teams and Clubs: Local hurling teams and clubs in need of bulk purchases and customized gear.
+  Schools and Academies: Educational institutions and training academies looking to equip their students with proper hurling equipment.
+  Retailers and Distributors: Sports retailers and distributors interested in stocking high-quality hurling gear.
 
-Individual Players: Amateur and professional hurling players seeking reliable and durable equipment.
-Teams and Clubs: Local hurling teams and clubs in need of bulk purchases and customized gear.
-Schools and Academies: Educational institutions and training academies looking to equip their students with proper hurling equipment.
-Retailers and Distributors: Sports retailers and distributors interested in stocking high-quality hurling gear.
+- Channels:
+  Online Store: Our primary sales channel is the AshClash website, where customers can browse and purchase products directly.
+  Social Media: We utilize platforms like Facebook, Instagram, and Twitter for marketing, customer engagement, and direct sales through integrated shopping features.
+  Email Marketing: Regular newsletters and promotional emails to keep customers informed about new products, offers, and hurling news.
+  Partnerships: Collaborations with local hurling clubs, schools, and sports retailers to expand our reach and presence.
 
-Channels:
+- Relationships:
+  Personalized Service: Offering expert advice and recommendations to customers to help them choose the right products.
+  Customer Support: Providing responsive and helpful customer service through email, chat, and phone support.
+  Community Engagement: Building a community of hurling enthusiasts through social media, forums, and sponsored events.
 
-Online Store: Our primary sales channel is the AshClash website, where customers can browse and purchase products directly.
-Social Media: We utilize platforms like Facebook, Instagram, and Twitter for marketing, customer engagement, and direct sales through integrated shopping features.
-Email Marketing: Regular newsletters and promotional emails to keep customers informed about new products, offers, and hurling news.
-Partnerships: Collaborations with local hurling clubs, schools, and sports retailers to expand our reach and presence.
+- Revenue:
+  Direct Sales: Revenue from selling hurling equipment and accessories through our online store.
+  Bulk Orders: Discounted bulk sales to teams, clubs, schools, and retailers.
+  Customizations: Additional revenue from personalized and customized gear for teams and individuals.
+  Affiliate Marketing: Commission from affiliate links and partnerships with other sports brands.
 
-Relationships:
+- Key Resources:
+  Product Inventory: A wide range of high-quality hurling equipment and accessories.
+  E-commerce Platform: A robust and user-friendly website for online sales.
+  Supply Chain: Reliable suppliers and manufacturers to ensure product quality and availability.
+  Marketing Tools: Social media, email marketing, and SEO strategies to drive traffic and sales.
+  Customer Data: Insights and analytics to understand customer preferences and improve offerings.
 
-Personalized Service: Offering expert advice and recommendations to customers to help them choose the right products.
-Customer Support: Providing responsive and helpful customer service through email, chat, and phone support.
-Community Engagement: Building a community of hurling enthusiasts through social media, forums, and sponsored events.
+- Activities:
+  Product Sourcing: Continuously sourcing and updating our inventory with the latest and best hurling gear.
+  Marketing and Promotion: Implementing effective marketing campaigns to attract and retain customers.
+  Customer Service: Providing exceptional support and after-sales service to ensure customer satisfaction.
+  Order Fulfillment: Efficiently managing inventory, packing, and shipping orders to customers.
 
-Revenue:
+- Partnerships:
+  Suppliers and Manufacturers: Establishing strong relationships with reliable suppliers for quality products.
+  Hurling Clubs and Associations: Partnering with clubs and associations for sponsorships and bulk sales.
+  Marketing Affiliates: Collaborating with influencers, bloggers, and sports websites for affiliate marketing.
+  Logistics Providers: Partnering with logistics companies for efficient order delivery.
 
-Direct Sales: Revenue from selling hurling equipment and accessories through our online store.
-Bulk Orders: Discounted bulk sales to teams, clubs, schools, and retailers.
-Customizations: Additional revenue from personalized and customized gear for teams and individuals.
-Affiliate Marketing: Commission from affiliate links and partnerships with other sports brands.
-
-Key Resources:
-
-Product Inventory: A wide range of high-quality hurling equipment and accessories.
-E-commerce Platform: A robust and user-friendly website for online sales.
-Supply Chain: Reliable suppliers and manufacturers to ensure product quality and availability.
-Marketing Tools: Social media, email marketing, and SEO strategies to drive traffic and sales.
-Customer Data: Insights and analytics to understand customer preferences and improve offerings.
-
-Activities:
-
-Product Sourcing: Continuously sourcing and updating our inventory with the latest and best hurling gear.
-Marketing and Promotion: Implementing effective marketing campaigns to attract and retain customers.
-Customer Service: Providing exceptional support and after-sales service to ensure customer satisfaction.
-Order Fulfillment: Efficiently managing inventory, packing, and shipping orders to customers.
-
-Partnerships:
-
-Suppliers and Manufacturers: Establishing strong relationships with reliable suppliers for quality products.
-Hurling Clubs and Associations: Partnering with clubs and associations for sponsorships and bulk sales.
-Marketing Affiliates: Collaborating with influencers, bloggers, and sports websites for affiliate marketing.
-Logistics Providers: Partnering with logistics companies for efficient order delivery.
-
-Cost Structure:
-
-Product Costs: Expenses related to sourcing and manufacturing hurling equipment and accessories.
-Operational Costs: Website maintenance, staff salaries, and office expenses.
-Marketing Expenses: Costs for digital marketing, advertising, and promotional activities.
-Shipping and Handling: Costs associated with packing and delivering orders to customers.
-Customer Service: Expenses for providing customer support and handling returns.
+- Cost Structure:
+  Product Costs: Expenses related to sourcing and manufacturing hurling equipment and accessories.
+  Operational Costs: Website maintenance, staff salaries, and office expenses.
+  Marketing Expenses: Costs for digital marketing, advertising, and promotional activities.
+  Shipping and Handling: Costs associated with packing and delivering orders to customers.
+  Customer Service: Expenses for providing customer support and handling returns.
 
 AshClash aims to become the go-to destination for hurling enthusiasts by offering a comprehensive range of high-quality equipment and accessories. By focusing on customer satisfaction, continuous product improvement, and effective marketing strategies, AshClash is poised to grow and thrive in the niche market of hurling sports.
 
@@ -440,12 +482,12 @@ The site has a number of features to help with SEO and marketing. The site has a
 
 The site also has a Mailchimp newsletter signup form [Mailchimp](https://mailchimp.com/), which can be used to collect emails for marketing purposes. Newsletter form:
 
-![newsletter form](./documentation/features/newsletterfeature.jpg).
+![newsletter form](documentation/features/newsletterfeature.jpg).
 
 - Facebook page
 The site also has a Facebook business page, which can be used to post content for customers to see, as well as engage with customers through comments and messages. You can [click here to see the AshClash Facebook Page](https://www.facebook.com/profile.php?id=61561113772755). Here is a screenshot of the Facebook Business Page:
 
-![Facebook Business Page](./documentation/facebookcover.jpg)
+![Facebook Business Page](documentation/facebookcover.jpg)
 
 #### Keywords
 

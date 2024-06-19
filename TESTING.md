@@ -63,49 +63,49 @@ I used [JSHint](https://jshint.com/) to validate my JavaScript code. Here is a t
 
 | File        | Screenshot                                                               | Description                                                                       |
 | ----------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
-| `script.js` | ![AshClash script](documentation/validation/js/jshint-script.png) | Optional chaining warning because online validator can't recognise I'm using ES11 |
+| `script.js` | ![AshClash script](documentation/validation/js/jshint-script.png)        | Optional chaining warning because online validator can't recognise I'm using ES11 |
 
 ### Python and Django (Pep 8)
 
 I used the [Code Institute PEP8 Validator](https://pep8ci.herokuapp.com/) to check that my Python code is PEP8 compliant. I validated any files that were either modified or created by me. Here is a table of the validated code, which shows the file validated, a screenshot, and a description of any warnings:
 
-| File                        | Screenshot                                                                              | Description                                                                                   |
-| --------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| ashclash/settings.py | ![ashclash-settings](documentation/validation/pep8/pep8ashclashsettings.jpg) | Pass |
-| ashclash/urls.py     | ![ashclash-urls](documentation/validation/pep8/pep8ashclashurls.jpg)         | Pass                                                                                          |
-| basket/contexts.py            | ![basket-contexts](documentation/validation/pep8/pep8basketcontexts.jpg)                       | Pass                                                                                          |
-| basket/views.py               | ![basket-views](ddocumentation/validation/pep8/pep8basketviews.jpg)                               | 32: E501 line too long (82 > 79 characters)                                                 |
-| basket/urls.py                | ![basket-urls](documentation/validation/pep8/pep8basketurls.jpg)                               | Pass                                                                                          |
-| checkout/admin.py           | ![checkout-admin](documentation/validation/pep8/pep8checkoutadmin.jpg)                     | Pass                                                                                          |
-| checkout/forms.py           | ![checkout-forms](documentation/validation/pep8/pep8checkoutforms.jpg)                     | Pass                                                                                          |
-| checkout/models.py          | ![checkout-models](documentation/validation/pep8/pep8checkoutmodels.jpg)                   | 52: E501 line too long (102 > 79 characters), 54: E501 line too long (95 > 79 characters)                                                                                          |
-| checkout/signals.py         | ![checkout-signals](documentation/validation/pep8/pep8checkoutsignals.jpg)                 | Pass                                                                                          |
-| checkout/urls.py            | ![checkout-urls](documentation/validation/pep8/pep8checkouturls.jpg)                       | Pass                                                                                          |
-| checkout/views.py           | ![checkout-views](documentation/validation/pep8/pep8checkoutviews.jpg)                     | Pass                                                                                          |
-| checkout/webhook_handler.py | ![checkout-webhook_handler](documentation/validation/pep8/pep8checkoutWHH.jpg) | Pass                                                                                          |
-| checkout/webhooks.py        | ![checkout-webhooks](documentation/validation/pep8/pep8checkoutWHS.jpg)               | Pass                                                                                          |
-| product/admin.py            | ![product-admin](documentation/validation/pep8/pep8productadmin.jpg)                       | Pass                                                                                          |
-| product/forms.py            | ![product-forms](documentation/validation/pep8/pep8productforms.jpg)                       | Pass                                                                                          |
-| product/models.py           | ![product-models](documentation/validation/pep8/pep8productmodels.jpg)                     | Pass                                                                                          |
-| product/urls.py             | ![product-urls](documentation/validation/pep8/pep8producturls.jpg)                         | Pass                                                                                          |
-| product/views.py            | ![product-views](documentation/validation/pep8/pep8productviews.jpg)                       | Pass                                                                                          |
-| product/widgets.py          | ![product-widgets](documentation/validation/pep8/pep8productwidgets.jpg)                   | Pass                                                                                          |
-| profiles/forms.py           | ![profiles-forms](documentation/validation/pep8/pep8profileforms.jpg)                     | Pass                                                                                          |
-| profiles/models.py          | ![profiles-models](documentation/validation/pep8/pep8profilemodels.jpg)                   | Pass                                                                                          |
-| profiles/urls.py            | ![profiles-urls](documentation/validation/pep8/pep8profileurls.jpg)                       | Pass                                                                                          |
-| profiles/views.py           | ![profiles-views](documentation/validation/pep8/pep8profileviews.jpg)                     | Pass                                                                                          |
-| promotions/admin.py           | ![profiles-admin](documentation/validation/pep8/pep8promotionsadmin.jpg)                     | Pass                                                                                          |
-| promotions/forms.py               | ![promotions-forms](documentation/validation/pep8/pep8promotionsforms.jpg)                             | Pass                                                                                          |
-| promotions/models.py              | ![promotions-models](documentation/validation/pep8/pep8promotionsmodels.jpg)                           | Pass                                                                                          |
-| promotions/urls.py                | ![promotions-urls](documentation/validation/pep8/pep8promotionsurls.jpg)                               | Pass                                                                                          |
-| promotions/views.py               | ![promotions-views](documentation/validation/pep8/pep8promotionsviews.jpg)                             | Pass                                                                                          |
-| home/urls.py                | ![home-urls](documentation/validation/pep8/pep8homeurls.jpg)                               | Pass                                                                                          |
-| home/views.py               | ![home-views](documentation/validation/pep8/pep8homeviews.jpg)                             | Pass                                                                                          |
-| review/admin.py             | ![review-admin](documentation/validation/pep8/pep8reviewadmin.jpg)                         | Pass                                                                                          |
-| review/forms.py             | ![review-forms](documentation/validation/pep8/pep8reviewforms.jpg)                         | Pass                                                                                          |
-| review/models.py            | ![review-models](documentation/validation/pep8/pep8reviewmodels.jpg)                       | Pass                                                                                          |
-| review/urls.py              | ![review-urls](documentation/validation/pep8/pep8reviewurls.jpg)                           | Pass                                                                                          |
-| review/views.py             | ![review-views](documentation/validation/pep8/pep8reviewviews.jpg)                         | Pass                                                                                          |
+| File                        | Screenshot                                                                       | Description            |
+| --------------------------- | -------------------------------------------------------------------------------- | ---------------------- |
+| ashclash/settings.py        | ![ashclash-settings](documentation/validation/pep8/pep8ashclashsettings.jpg)     | Pass                   |
+| ashclash/urls.py            | ![ashclash-urls](documentation/validation/pep8/pep8ashclashurls.jpg)             | Pass                   |
+| basket/contexts.py          | ![basket-contexts](documentation/validation/pep8/pep8basketcontexts.jpg)         | Pass                   |
+| basket/views.py             | ![basket-views](documentation/validation/pep8/pep8basketviews.jpg)               |                        |
+| basket/urls.py              | ![basket-urls](documentation/validation/pep8/pep8basketurls.jpg)                 | Pass                   |
+| checkout/admin.py           | ![checkout-admin](documentation/validation/pep8/pep8checkoutadmin.jpg)           | Pass                   |
+| checkout/forms.py           | ![checkout-forms](documentation/validation/pep8/pep8checkoutforms.jpg)           | Pass                   |
+| checkout/models.py          | ![checkout-models](documentation/validation/pep8/pep8checkoutmodels.jpg)         |                        |
+| checkout/signals.py         | ![checkout-signals](documentation/validation/pep8/pep8checkoutsignals.jpg)       | Pass                   |
+| checkout/urls.py            | ![checkout-urls](documentation/validation/pep8/pep8checkouturls.jpg)             | Pass                   |
+| checkout/views.py           | ![checkout-views](documentation/validation/pep8/pep8checkoutviews.jpg)           |                        |
+| checkout/webhook_handler.py | ![checkout-webhook_handler](documentation/validation/pep8/pep8checkoutWHH.jpg)   |                        |
+| checkout/webhooks.py        | ![checkout-webhooks](documentation/validation/pep8/pep8checkoutWHS.jpg)          |                        |
+| product/admin.py            | ![product-admin](documentation/validation/pep8/pep8productadmin.jpg)             | Pass                   |
+| product/forms.py            | ![product-forms](documentation/validation/pep8/pep8productforms.jpg)             | Pass                   |
+| product/models.py           | ![product-models](documentation/validation/pep8/pep8productmodels.jpg)           | Pass                   |
+| product/urls.py             | ![product-urls](documentation/validation/pep8/pep8producturls.jpg)               | Pass                   |
+| product/views.py            | ![product-views](documentation/validation/pep8/pep8productviews.jpg)             |                        |
+| product/widgets.py          | ![product-widgets](documentation/validation/pep8/pep8productwidgets.jpg)         | Pass                   |
+| profiles/forms.py           | ![profiles-forms](documentation/validation/pep8/pep8profileforms.jpg)            | Pass                   |
+| profiles/models.py          | ![profiles-models](documentation/validation/pep8/pep8profilemodels.jpg)          | Pass                   |
+| profiles/urls.py            | ![profiles-urls](documentation/validation/pep8/pep8profileurls.jpg)              | Pass                   |
+| profiles/views.py           | ![profiles-views](documentation/validation/pep8/pep8profileviews.jpg)            | Pass                   |
+| promotions/admin.py         | ![profiles-admin](documentation/validation/pep8/pep8promotionsadmin.jpg)         | Pass                   |
+| promotions/forms.py         | ![promotions-forms](documentation/validation/pep8/pep8promotionsforms.jpg)       | Pass                   |
+| promotions/models.py        | ![promotions-models](documentation/validation/pep8/pep8promotionsmodels.jpg)     | Pass                   |
+| promotions/urls.py          | ![promotions-urls](documentation/validation/pep8/pep8promotionsurls.jpg)         | Pass                   |
+| promotions/views.py         | ![promotions-views](documentation/validation/pep8/pep8promotionsviews.jpg)       | Pass                   |
+| home/urls.py                | ![home-urls](documentation/validation/pep8/pep8homeurls.jpg)                     | Pass                   |
+| home/views.py               | ![home-views](documentation/validation/pep8/pep8homeviews.jpg)                   | Pass                   |
+| review/admin.py             | ![review-admin](documentation/validation/pep8/pep8reviewadmin.jpg)               | Pass                   |
+| review/forms.py             | ![review-forms](documentation/validation/pep8/pep8reviewforms.jpg)               | Pass                   |
+| review/models.py            | ![review-models](documentation/validation/pep8/pep8reviewmodels.jpg)             | Pass                   |
+| review/urls.py              | ![review-urls](documentation/validation/pep8/pep8reviewurls.jpg)                 | Pass                   |
+| review/views.py             | ![review-views](documentation/validation/pep8/pep8reviewviews.jpg)               |                        |
 
 
 ## Performance
@@ -114,29 +114,27 @@ Performance metrics were gathered using Google's PageSpeed Insights to ensure th
 
 ### Mobile Performance
 
-| Page            | Lighthouse Screenshot                                                           | Comments                                                                                       |
-| --------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Homepage        | ![Homepage Mobile](documentation/performance/mobile-homepage.png)               |                                                                                                |
-| Login           | ![Login Mobile](documentation/performance/mobile-login.png)                     |                                                                                                |
-| Order Summary   | ![Order Summary Mobile](documentation/performance/mobile-order-summary.png)     |                                                                                                |
-| Product Detail  | ![Product Mobile](documentation/performance/mobile-product.png)                 |                                                                                                |
-| Products        | ![Products Mobile](documentation/performance/mobile-products.png)               |                                                                                                |
-| Search          | ![Search Mobile](documentation/performance/mobile-search.png)                   |                                                                                                |
-| Signup          | ![Signup Mobile](documentation/performance/mobile-signup.png)                   |                                                                                                |
+| Page            | Lighthouse Screenshot                                                            | Comments       |
+| --------------- | ---------------------------------------------------------------------------------|--------------- |
+| Homepage        | ![Homepage Mobile](documentation/performance/lighthouse/mbhomepagelhtest.jpg)    |                |
+| Login           | ![Login Mobile](documentation/performance/lighthouse/mbloginlhtest.jpg)          |                |
+| Product Detail  | ![Product Mobile](documentation/performance/lighthouse/mbproductdetaillhtest.jpg)|                |
+| Products        | ![Products Mobile](documentation/performance/lighthouse/mbproductpagelhtest.jpg) |                |
+| Search          | ![Search Mobile](documentation/performance/lighthouse/mbsearchlhtest.jpg)        |                |
+| Promotions      | ![Promotions Mobile](documentation/performance/lighthouse/mbpromotionslhtest.jpg)|                |
+| Reviews         | ![Reviews Mobile](documentation/performance/lighthouse/mbreviewslhtest.jpg)      |                |
 
 ### Desktop Performance
 
-| Page            | Lighthouse Screenshot                                                             | Comments       |
-| --------------- | --------------------------------------------------------------------------------- | -------------- |
-| Homepage        | ![Homepage Desktop](documentation/performance/desktop-homepage.png)               |                |
-| Login           | ![Login Desktop](documentation/performance/desktop-login.png)                     |                |
-| Order Summary   | ![Order Summary Desktop](documentation/performance/desktop-order-summary.png)     |                |
-| Privacy Policy  | ![Privacy Policy Desktop](documentation/performance/desktop-privacy-policy.png)   |                |
-| Product Detail  | ![Product Detail Desktop](documentation/performance/desktop-product-detail.png)   |                |
-| Products        | ![Products Desktop](documentation/performance/desktop-products.png)               |                |
-| Search          | ![Search Desktop](documentation/performance/desktop-search.png)                   |                |
-| Shipping Policy | ![Shipping Policy Desktop](documentation/performance/desktop-shipping-policy.png) |                |
-| Signup          | ![Signup Desktop](documentation/performance/desktop-signup.png)                   |                |
+| Page            | Lighthouse Screenshot                                                                      | Comments       |
+| --------------- | ------------------------------------------------------------------------------------------ | -------------- |
+| Homepage        | ![Homepage Desktop](documentation/performance/lighthouse/dthomepagelhtest.jpg)             |                |
+| Login           | ![Login Desktop](documentation/performance/lighthouse/dtloginlhtest.jpg)                   |                |
+| Product Detail  | ![Product Detail Desktop](documentation/performance/lighthouse/dtproductdetaillhtest.jpg)  |                |
+| Products        | ![Products Desktop](documentation/performance/lighthouse/dtproductpagelhtest.jpg)          |                |
+| Search          | ![Search Desktop](documentation/performance/lighthouse/dtsearchlhtest.jpg)                 |                |
+| Promotions      | ![Promotions Desktop](documentation/performance/lighthouse/dtpromotionslhtest.jpg)         |                |
+| Reviews         | ![Reviews Desktop](documentation/performance/lighthouse/dtreviewslhtest.jpg)               |                |
 
 ## Manual Testing
 
