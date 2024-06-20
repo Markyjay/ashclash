@@ -19,6 +19,7 @@ def list_reviews(request):
 
     return render(request, 'review/reviews.html', context)
 
+
 @login_required
 def create_review(request, product_id):
     """
@@ -28,8 +29,11 @@ def create_review(request, product_id):
     who is logged in and has purchased the product.
     """
     product = get_object_or_404(Product, id=product_id)
-    if not OrderLineItem.objects.filter(order__user_profile=request.user.userprofile, product=product).exists():
-        messages.error(request, "You must have purchased this product to review it.")
+    if not OrderLineItem.objects.filter(
+         order__user_profile=request.user.userprofile,
+         product=product).exists():
+        messages.error(
+         request, "You must have purchased this product to review it.")
         return redirect('product_detail', product_id=product_id)
     if request.method == 'POST':
         form = ReviewForm(request.POST)

@@ -54,13 +54,13 @@ Link to live site - [AshClash Website](https://ashclash-pp5-8ef04402753f.herokua
   - [Features Not Implemented](#features-not-implemented)
   - [Future Features](#future-features)
 - [Models](#models)
-  - [UserProfile ERD](#userprofile-erd)
-  - [Promotions ERD](#promotions-erd)
-  - [Category ERD](#category-erd)
-  - [Order ERD](#order-erd)
-  - [OrderLineItem ERD](#orderlineitem-erd)
-  - [Product ERD](#product-erd)
-  - [Review ERD](#review-erd)
+  - [UserProfile Class](#userprofile-class)
+  - [Order Class](#order-class)
+  - [OrderLineItem Class](#orderlineitem-class)
+  - [Category Class](#category-class)
+  - [Product Class](#product-class)
+  - [PromotionalPlayer Class](#promotions-class)
+  - [Review Class](#review-class)
 - [Business Model](#business-model)
   - [Search Engine Optimisation (SEO) and Marketing](#search-engine-optimisation-and-marketing) 
   - [Marketing](#marketing)
@@ -485,7 +485,10 @@ The site also has a Mailchimp newsletter signup form [Mailchimp](https://mailchi
 
 ![newsletter form](documentation/features/newsletterfeature.jpg).
 
-- Facebook page
+- Facebook page (rel attribute) 
+
+![Facebook rel attribute](documentation/features/facebooklink.jpg)
+
 The site also has a Facebook business page, which can be used to post content for customers to see, as well as engage with customers through comments and messages. You can [click here to see the AshClash Facebook Page](https://www.facebook.com/profile.php?id=61561113772755). Here is a screenshot of the Facebook Business Page:
 
 ![Facebook Business Page](documentation/facebookcover.jpg)
