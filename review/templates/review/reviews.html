@@ -19,17 +19,14 @@
 <div class="container review-container">
     <div class="row">
         {% for review in reviews %}
-     
             <div class="col-md-6 mb-4">
                 <div class="card review-background">
-                    
                     <div class="card-body product m-5">
                         <h5 class="card-title">{{ review.title }}</h5>
                         <div class="product pb-0">
                             <div class="card-body pb-0">
                                 <p class="mb-0">{{ review.product.name }}</p>
                             </div>
-                            
                             <a href="{% url 'product_detail' review.product.id %}">
                                 {% if review.product.image %}
                                     <img class="card-img-top img-fluid" src="{{ review.product.image.url }}" alt="{{ review.product.name }}">
@@ -57,8 +54,4 @@
     </div>
     
 </div>
-{% endblock %}
-
-{% block postloadjs %}
-<script src="{% static 'review/js/reviews.js' %}"></script>
 {% endblock %}
