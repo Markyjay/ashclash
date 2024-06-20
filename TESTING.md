@@ -11,7 +11,6 @@ This document outlines the testing process for the Sleep Healthily website. The 
 - [Validation](#validation)
   - [HTML](#html)
   - [CSS](#css)
-  - [JavaScript](#javascript)
   - [Python and Django (Pep 8)](#python-and-django-pep-8)
 - [Performance](#performance)
   - [Mobile Performance](#mobile-performance)
@@ -56,14 +55,6 @@ In order to properly validate my HTML pages for authenticated pages, I followed 
 ### CSS
 
 I use the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to validate my CSS code. You can [click here to see the validated CSS code without any errors](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fashclash-pp5-8ef04402753f.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
-
-### JavaScript
-
-I used [JSHint](https://jshint.com/) to validate my JavaScript code. Here is a table of the validated code, which shows the file validated, a screenshot and a description of any warnings:
-
-| File        | Screenshot                                                               | Description                                                                       |
-| ----------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
-| `script.js` | ![AshClash script](documentation/validation/js/jshint-script.png)        | Optional chaining warning because online validator can't recognise I'm using ES11 |
 
 ### Python and Django (Pep 8)
 
@@ -178,4 +169,4 @@ I carried out manual testing according to my user stories. To be considered a pa
 
 The below are known bugs and possible areas of UX improvement I came across during testing.
 
-1. 
+1. Had a lot of difficulty with smaller screens, I still struggle with media screen sizing, hence the various styling issues on mobile. I did not have enough time to test all screen sizes, I

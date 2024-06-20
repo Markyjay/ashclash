@@ -26,13 +26,20 @@ def add_to_basket(request, item_id):
         if item_id in list(basket.keys()):
             if size in basket[item_id]['items_by_size'].keys():
                 basket[item_id]['items_by_size'][size] += quantity
-                messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {basket[item_id]["items_by_size"][size]}')
+                basket_size = basket[item_id]["items_by_size"][size]
+                messages.success(request,
+                                 f'Updated size {size.upper()} {product.name} '
+                                 f'quantity to {basket_size}')
             else:
                 basket[item_id]['items_by_size'][size] = quantity
-                messages.success(request, f'Added size {size.upper()} {product.name} to your basket')
+                messages.success(
+                    request,
+                    f'Added size {size.upper()} {product.name} to your basket')
         else:
             basket[item_id] = {'items_by_size': {size: quantity}}
-            messages.success(request, f'Added size {size.upper()} {product.name} to your basket')
+            messages.success(
+                request,
+                f'Added size {size.upper()} {product.name} to your basket')
     else:
         if item_id in list(basket.keys()):
             basket[item_id] += quantity

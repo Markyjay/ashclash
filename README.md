@@ -70,7 +70,7 @@ Link to live site - [AshClash Website](https://ashclash-pp5-8ef04402753f.herokua
 - [Technologies Used](#technologies-used)
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
 - [Agile](#agile)
-- [Testing](#testing)
+- [Testing documentation](#testing-documentation)
 - [Deployment](#deployment)
   - [Github Deployment](#github-deployment)
   - [Creating a Fork or Copying](#creating-a-fork-or-copying)
@@ -579,8 +579,9 @@ This project was designed using Agile methodology, utilising the Project Board a
 
 - [Project Board](https://github.com/users/Markyjay/projects/4)
 
-# Testing
-All Testing recorded in TESTING.MD
+## Testing documentation
+
+I documented all automated and manual tests in the [TESTING.md](./TESTING.md) file.
 
 # Deployment
 
