@@ -68,35 +68,60 @@
                                 </a>                           
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                            {% if product.category %}
-                                            <p class="small mt-1 mb-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="mb-0 font-weight-bold">{{ product.name }}</p>
+                                        <p class="lead mb-0 text-right font-weight-bold">${{ product.price }}</p>
+                                    </div>
+                                    <div class="mt-2">
+                                        {% if product.category %}
+                                            <p class="small mb-0">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                 </a>
                                             </p>
-                                            {% endif %}
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                        {% endif %}
+                                        {% if product.rating %}
+                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                        {% else %}
+                                            <small class="text-muted">No Rating</small>
+                                        {% endif %}
+                                        <p class="mb-0">
+                                            Safety Certification:
+                                            {% if product.safety_certification %}
+                                                <span class="text-success">✔️</span>
                                             {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                                <span class="text-danger">❌</span>
+                                            {% endif %}
+                                        </p>
+                                        <p>
+                                            Availability:
+                                            {% if product.availability %}
+                                                <span class="text-success">✔️</span>
+                                            {% else %}
+                                                <span class="text-danger">❌</span>
                                             {% endif %}
                                             {% if request.user.is_superuser %}
-                                                <small class="ml-3">
+                                                <span class="float-right">
                                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                                                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
+                                                </span>
                                             {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="d-flex justify-content-between align-items-center font-weight-bold">
+                                                <span>Bought this product?</span>
+                                                <div>
+                                                    <a href="{% url 'create_review' product.id %}" class="btn btn-success btn-sm">Leave a Review</a>
+                                                    <span>({{ product.reviews.count }})</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="reviews-section mt-5">
-                                            <small class="small mt-1 mb-0">Bought this product?</small>
-                                            <div>
-                                                <a href="{% url 'create_review' product.id %}" class="small btn btn-success mt-1 mb-0">Leave a Review</a>
+                                        <div class="col-12">
+                                            <div class="reviews-section mt-2">
                                                 {% if product.reviews.exists %}
                                                     <ul class="list-group">
                                                         {% for review in product.reviews.all %}
@@ -107,9 +132,9 @@
                                                         {% endfor %}
                                                     </ul>
                                                 {% else %}
-                                                <div>
-                                                    <small>No reviews yet.</small>
-                                                </div>
+                                                    <div>
+                                                        <small>No reviews yet.</small>
+                                                    </div>
                                                 {% endif %}
                                             </div>
                                         </div>

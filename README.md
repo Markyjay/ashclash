@@ -282,6 +282,7 @@ The User have the sites newsletter sent to their email.
 ## Features Not Implemented
 - Displaying the count of reviews for the product.
 Conditionally showing a message if there are no reviews ("No reviews yet").
+
 ![No Reviews Yet](documentation/features/noreviewyetfeature.jpg)
 
 Reason for not implementing: Time Constraints and Model Setup Complexity

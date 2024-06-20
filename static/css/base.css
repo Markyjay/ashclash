@@ -275,6 +275,50 @@ input[name="q"]::placeholder {
   border-radius: 0;
 }
 
+/* Product detail styling */
+/* Ensure the product name is bold */
+.card-body p.font-weight-bold {
+  font-weight: bold;
+}
+
+/* Align the price to the right of the product name */
+.card-body .d-flex p.text-right {
+  margin-left: auto;
+}
+
+/* Float the Edit|Delete links to the right of the availability */
+.float-right {
+  float: right;
+}
+
+/* Style the "Bought this product?" line */
+.card-footer .d-flex.justify-content-between {
+  align-items: center;
+}
+
+/* Safety Certificate and Availibility styling */
+.tick {
+  color: green;
+}
+.cross {
+  color: red;
+}
+
+/* Ensure the size and quantity inputs are smaller */
+.product-details-container .form-control {
+  max-width: 100%;
+}
+
+.product-details-container .input-group-prepend,
+.product-details-container .input-group-append,
+.product-details-container .qty_input {
+  max-width: 60px;
+}
+
+.product-details-container select.form-control {
+  max-width: 100px;
+}
+
 /* Newsletter */
 #newsletter_shell {
   width: 100%;
@@ -411,6 +455,53 @@ input[name="q"]::placeholder {
   .increment-qty,
   .decrement-qty {
     padding: 0.25rem 0.5rem !important;
+  }
+
+  .product-details-container p {
+    font-size: 0.9rem;
+  }
+  .product-details-container .lead {
+    font-size: 1rem;
+  }
+  .product-details-container .input-group-prepend,
+  .product-details-container .input-group-append,
+  .product-details-container .qty_input,
+  .product-details-container select.form-control {
+      max-width: 80px;
+  }
+  .product-details-container .d-flex {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .product-details-container .d-flex p {
+      margin-bottom: 0.5rem;
+  }
+
+  .card-body .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .card-body .d-flex p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+  }
+  .card-body .lead {
+      font-size: 1rem;
+  }
+  .card-footer .d-flex {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .card-footer .d-flex span,
+  .card-footer .d-flex .btn {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+  }
+  .card-footer .d-flex span {
+      margin-right: 0;
+  }
+  .card-footer .reviews-section ul.list-group {
+      margin-top: 1rem;
   }
 
   #newsletter_signup {
