@@ -58,7 +58,9 @@ I use the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to 
 
 ### Python and Django (Pep 8)
 
-I used the [Code Institute PEP8 Validator](https://pep8ci.herokuapp.com/) to check that my Python code is PEP8 compliant. I validated any files that were either modified or created by me. Here is a table of the validated code, which shows the file validated, a screenshot, and a description of any warnings: I was unable to find a safe fix for the two fails
+I used the [Code Institute PEP8 Validator](https://pep8ci.herokuapp.com/) to check that my Python code is PEP8 compliant. I validated any files that were either modified or created by me. Here is a table of the validated code, which shows the file validated, a screenshot, and a description of any warnings: 
+
+Note: All attempts to shorten the two failing lines broke my code so I left them as they were only 2 characters above recommended pep8 guideline.
 
 | File                        | Screenshot                                                                       | Description                            |
 | --------------------------- | -------------------------------------------------------------------------------- | -------------------------------------- |

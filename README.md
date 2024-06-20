@@ -48,6 +48,7 @@ Link to live site - [AshClash Website](https://ashclash-pp5-8ef04402753f.herokua
 - [Features](#features)
   - [Registration](#registration)
   - [Product Safety Feature](#product-safety-feature)
+  - [Product Availibility Feature](#product-availibility-feature)
   - [Promotions Feature](#promotions-feature)
   - [Reviews Feature](#reviews-feature)
   - [Newsletter Feature](#newsletter-feature)
@@ -243,7 +244,13 @@ The user can logout of an account
 
 The user see if the product has a safety certificate.
 
-![Safety Certification Approved]()
+![Safety Certification Approved](documentation/features/safetycertfeature.jpg)
+
+## Product Availibility Feature
+
+The user see if the product is availible.
+
+![Product Availibility](documentation/features/safetycertfeature.jpg)
 
 ## Promotions Feature
 
